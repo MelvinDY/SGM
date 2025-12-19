@@ -4,15 +4,18 @@ import { WhatsAppButton } from '@/components/WhatsAppButton'
 
 interface LayoutProps {
   children: React.ReactNode
+  hideFooter?: boolean
+  hideNavbar?: boolean
+  hideWhatsApp?: boolean
 }
 
-export function Layout({ children }: LayoutProps) {
+export function Layout({ children, hideFooter = false, hideNavbar = false, hideWhatsApp = false }: LayoutProps) {
   return (
     <div className="min-h-screen bg-cream">
-      <Navbar />
+      {!hideNavbar && <Navbar />}
       <main>{children}</main>
-      <Footer />
-      <WhatsAppButton />
+      {!hideFooter && <Footer />}
+      {!hideWhatsApp && <WhatsAppButton />}
     </div>
   )
 }

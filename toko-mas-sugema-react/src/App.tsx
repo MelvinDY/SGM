@@ -22,7 +22,7 @@ function App() {
         {/* Public routes */}
         <Route element={<Layout><HomePage /></Layout>} path="/" />
         <Route element={<Layout><ProductsPage /></Layout>} path="/produk" />
-        <Route element={<Layout><GoldPricePage /></Layout>} path="/harga-emas" />
+        <Route element={<Layout hideFooter hideNavbar hideWhatsApp><GoldPricePage /></Layout>} path="/harga-emas" />
         <Route element={<Layout><AboutPage /></Layout>} path="/tentang" />
         <Route element={<Layout><ContactPage /></Layout>} path="/kontak" />
 
