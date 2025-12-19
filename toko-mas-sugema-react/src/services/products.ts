@@ -1,7 +1,9 @@
-import { supabase } from '@/config/supabase'
+import { supabase, isSupabaseConfigured } from '@/config/supabase'
 import type { Product, ProductCategory, ProductInsert, ProductUpdate } from '@/types/database'
 
 export async function getProducts(): Promise<Product[]> {
+  if (!isSupabaseConfigured) return []
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -13,6 +15,8 @@ export async function getProducts(): Promise<Product[]> {
 }
 
 export async function getProductsByCategory(category: ProductCategory): Promise<Product[]> {
+  if (!isSupabaseConfigured) return []
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -25,6 +29,8 @@ export async function getProductsByCategory(category: ProductCategory): Promise<
 }
 
 export async function getFeaturedProducts(): Promise<Product[]> {
+  if (!isSupabaseConfigured) return []
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -38,6 +44,8 @@ export async function getFeaturedProducts(): Promise<Product[]> {
 }
 
 export async function getProductById(id: string): Promise<Product | null> {
+  if (!isSupabaseConfigured) return null
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -50,6 +58,8 @@ export async function getProductById(id: string): Promise<Product | null> {
 
 // Admin functions
 export async function getAllProducts(): Promise<Product[]> {
+  if (!isSupabaseConfigured) return []
+
   const { data, error } = await supabase
     .from('products')
     .select('*')
@@ -60,6 +70,8 @@ export async function getAllProducts(): Promise<Product[]> {
 }
 
 export async function createProduct(product: ProductInsert): Promise<Product> {
+  if (!isSupabaseConfigured) throw new Error('Supabase not configured')
+
   const { data, error } = await supabase
     .from('products')
     .insert(product as never)
@@ -71,6 +83,8 @@ export async function createProduct(product: ProductInsert): Promise<Product> {
 }
 
 export async function updateProduct(id: string, updates: ProductUpdate): Promise<Product> {
+  if (!isSupabaseConfigured) throw new Error('Supabase not configured')
+
   const { data, error } = await supabase
     .from('products')
     .update(updates as never)
@@ -83,6 +97,8 @@ export async function updateProduct(id: string, updates: ProductUpdate): Promise
 }
 
 export async function deleteProduct(id: string): Promise<void> {
+  if (!isSupabaseConfigured) throw new Error('Supabase not configured')
+
   const { error } = await supabase
     .from('products')
     .delete()

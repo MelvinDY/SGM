@@ -1,7 +1,7 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import type { ReactNode } from 'react'
 import type { User, Session, AuthError } from '@supabase/supabase-js'
-import { supabase } from '@/config/supabase'
+import { supabase, isSupabaseConfigured } from '@/config/supabase'
 
 interface AuthContextType {
   user: User | null
@@ -21,6 +21,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   const [isAdmin, setIsAdmin] = useState(false)
 
   useEffect(() => {
+    // Skip if Supabase is not configured
+    if (!isSupabaseConfigured) {
+      setIsLoading(false)
+      return
+    }
+
     // Get initial session
     supabase.auth.getSession().then(({ data: { session } }) => {
       setSession(session)
@@ -65,6 +71,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const signIn = async (email: string, password: string) => {
+    if (!isSupabaseConfigured) {
+      return { error: { message: 'Supabase not configured' } as AuthError }
+    }
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -73,6 +82,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   const signOut = async () => {
+    if (!isSupabaseConfigured) return
     await supabase.auth.signOut()
     setIsAdmin(false)
   }
