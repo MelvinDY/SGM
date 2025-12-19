@@ -197,6 +197,14 @@
     color: var(--color-warm-gray);
   }
 
+  /* Elegant paragraph text */
+  .text-elegant {
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    font-size: 1.0625rem;
+    line-height: 1.8;
+  }
+
   /* Borders */
   .border-cream {
     border-color: var(--color-border-light);

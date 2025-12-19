@@ -35,7 +35,7 @@ export function ContactPage() {
             <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
               Mari <span className="text-gold italic font-accent">Berkomunikasi</span>
             </h1>
-            <p className="text-warm-gray max-w-xl mx-auto">
+            <p className="text-warm-gray max-w-xl mx-auto text-elegant">
               Kami siap membantu Anda menemukan perhiasan impian. Hubungi kami
               untuk konsultasi atau kunjungi toko kami langsung.
             </p>
@@ -143,7 +143,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-2">Alamat Toko</h4>
-                    <p className="text-sm text-warm-gray leading-relaxed">
+                    <p className="text-elegant text-warm-gray">
                       Jl. Tuparev No. 123<br />
                       Karawang Barat, Kabupaten Karawang<br />
                       Jawa Barat 41311, Indonesia
@@ -157,7 +157,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-2">Telepon</h4>
-                    <p className="text-sm text-warm-gray">
+                    <p className="text-elegant text-warm-gray">
                       <a href="tel:+622671234567" className="hover:text-gold transition-colors">
                         (0267) 123-4567
                       </a>
@@ -171,7 +171,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-2">WhatsApp</h4>
-                    <p className="text-sm text-warm-gray">
+                    <p className="text-elegant text-warm-gray">
                       <a
                         href="https://wa.me/6281234567890"
                         target="_blank"
@@ -190,7 +190,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-2">Email</h4>
-                    <p className="text-sm text-warm-gray">
+                    <p className="text-elegant text-warm-gray">
                       <a href="mailto:info@tokomassugema.com" className="hover:text-gold transition-colors">
                         info@tokomassugema.com
                       </a>
@@ -204,7 +204,7 @@ export function ContactPage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-2">Jam Operasional</h4>
-                    <div className="text-sm text-warm-gray space-y-1">
+                    <div className="text-elegant text-warm-gray space-y-1">
                       <p>Senin - Sabtu: 09:00 - 21:00</p>
                       <p>Minggu: 10:00 - 18:00</p>
                       <p className="text-gold font-medium">Buka setiap hari!</p>
@@ -254,7 +254,7 @@ export function ContactPage() {
           <h2 className="font-display text-4xl text-white mb-4">
             Kunjungi Toko Kami
           </h2>
-          <p className="text-white/80 max-w-lg mx-auto mb-8">
+          <p className="text-white/80 max-w-lg mx-auto mb-8 font-accent text-lg">
             Kami menantikan kedatangan Anda di Toko Mas Sugema.
             Tim kami siap membantu menemukan perhiasan sempurna untuk Anda.
           </p>

@@ -61,7 +61,7 @@ export function AboutPage() {
             <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
               Cerita <span className="text-gold italic font-accent">Kami</span>
             </h1>
-            <p className="text-warm-gray max-w-xl mx-auto">
+            <p className="text-warm-gray max-w-xl mx-auto text-elegant">
               Lebih dari tiga dekade melayani masyarakat Karawang dengan perhiasan
               emas berkualitas tinggi dan pelayanan terpercaya.
             </p>
@@ -95,7 +95,7 @@ export function AboutPage() {
                 Warisan Kepercayaan
                 <span className="block text-gold italic font-accent">Turun-Temurun</span>
               </h2>
-              <div className="space-y-4 text-warm-gray leading-relaxed">
+              <div className="space-y-4 text-warm-gray text-elegant">
                 <p>
                   Toko Mas Sugema didirikan pada tahun 1990 oleh Bapak Sugema, seorang
                   pengrajin emas berpengalaman yang memiliki visi untuk menyediakan
@@ -174,7 +174,7 @@ export function AboutPage() {
                   <h3 className="font-display text-xl text-charcoal mb-2">
                     {milestone.title}
                   </h3>
-                  <p className="text-warm-gray">
+                  <p className="text-warm-gray text-elegant">
                     {milestone.description}
                   </p>
                 </div>

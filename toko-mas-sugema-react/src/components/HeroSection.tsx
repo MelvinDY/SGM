@@ -149,7 +149,7 @@ export function HeroSection() {
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-warm-gray max-w-xl mx-auto mb-12 text-sm md:text-base leading-relaxed font-body"
+          className="text-warm-gray max-w-xl mx-auto mb-12 text-elegant"
         >
           Temukan koleksi perhiasan emas eksklusif dengan kualitas terbaik.
           Setiap karya dirancang untuk menemani momen berharga Anda.

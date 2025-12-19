@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, MessageCircle, Diamond } from 'lucide-react'
+import { Facebook, Instagram, MessageCircle, Diamond, MapPin, Phone } from 'lucide-react'
 
 const menuLinks = [
   { href: '/', label: 'Beranda' },
@@ -33,7 +33,7 @@ export function Footer() {
                 Sugema
               </span>
             </Link>
-            <p className="text-sm text-warm-gray leading-relaxed mb-6">
+            <p className="text-elegant text-warm-gray mb-6">
               Pusat perhiasan emas berkualitas tinggi di Karawang.
               Melayani dengan kepercayaan sejak 1990.
             </p>
@@ -105,16 +105,16 @@ export function Footer() {
               Kontak
             </h4>
             <ul className="space-y-3 text-sm text-warm-gray">
-              <li className="flex gap-3">
-                <span className="text-gold">📍</span>
+              <li className="flex gap-3 items-start">
+                <MapPin className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                 <span>Jl. Tuparev No. 123, Karawang</span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-gold">📞</span>
+              <li className="flex gap-3 items-start">
+                <Phone className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                 <span>(0267) 123-4567</span>
               </li>
-              <li className="flex gap-3">
-                <span className="text-gold">💬</span>
+              <li className="flex gap-3 items-start">
+                <MessageCircle className="w-4 h-4 text-gold flex-shrink-0 mt-0.5" />
                 <span>+62 812-3456-7890</span>
               </li>
             </ul>

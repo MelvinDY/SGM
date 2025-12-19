@@ -128,14 +128,14 @@ export function HomePage() {
               </motion.h2>
               <motion.p
                 variants={fadeInUp}
-                className="text-warm-gray leading-relaxed mb-6"
+                className="text-warm-gray text-elegant mb-6"
               >
                 Toko Mas Sugema telah melayani masyarakat Karawang selama lebih dari tiga dekade.
                 Kami berkomitmen menyediakan perhiasan emas dengan kualitas terbaik dan keaslian terjamin.
               </motion.p>
               <motion.p
                 variants={fadeInUp}
-                className="text-warm-gray text-sm leading-relaxed mb-8"
+                className="text-warm-gray text-elegant mb-8"
               >
                 Dengan pengalaman turun-temurun dalam industri perhiasan, kami memahami bahwa
                 setiap perhiasan memiliki makna tersendiri bagi pemiliknya. Itulah mengapa kami
@@ -327,7 +327,7 @@ export function HomePage() {
                       <Star key={i} className="w-4 h-4 text-gold fill-gold" />
                     ))}
                   </div>
-                  <p className="text-warm-gray text-sm leading-relaxed mb-6 italic">
+                  <p className="text-warm-gray text-elegant mb-6 italic">
                     "{testimonial.content}"
                   </p>
                   <div>
@@ -371,7 +371,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-1">Alamat</h4>
-                    <p className="text-sm text-warm-gray">
+                    <p className="text-elegant text-warm-gray">
                       Jl. Tuparev No. 123, Karawang Barat,<br />
                       Kabupaten Karawang, Jawa Barat 41311
                     </p>
@@ -384,7 +384,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-1">Telepon</h4>
-                    <p className="text-sm text-warm-gray">
+                    <p className="text-elegant text-warm-gray">
                       (0267) 123-4567<br />
                       +62 812-3456-7890
                     </p>
@@ -397,7 +397,7 @@ export function HomePage() {
                   </div>
                   <div>
                     <h4 className="text-charcoal font-medium mb-1">Jam Operasional</h4>
-                    <p className="text-sm text-warm-gray">
+                    <p className="text-elegant text-warm-gray">
                       Senin - Sabtu: 09:00 - 21:00<br />
                       Minggu: 10:00 - 18:00
                     </p>
