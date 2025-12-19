@@ -122,7 +122,7 @@ export function ProductsPage() {
               Koleksi Kami
             </p>
             <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
-              Katalog <span className="text-gold italic font-accent">Perhiasan</span>
+              Katalog <span className="text-gold font-cursive text-[1.15em]">Perhiasan</span>
             </h1>
             <p className="text-warm-gray max-w-xl mx-auto">
               Jelajahi koleksi lengkap perhiasan emas kami dengan berbagai pilihan desain

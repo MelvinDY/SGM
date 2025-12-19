@@ -59,7 +59,7 @@ export function AboutPage() {
               Tentang Kami
             </p>
             <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
-              Cerita <span className="text-gold italic font-accent">Kami</span>
+              Cerita <span className="text-gold font-cursive text-[1.15em]">Kami</span>
             </h1>
             <p className="text-warm-gray max-w-xl mx-auto text-elegant">
               Lebih dari tiga dekade melayani masyarakat Karawang dengan perhiasan
@@ -93,7 +93,7 @@ export function AboutPage() {
               </p>
               <h2 className="font-display text-4xl text-charcoal mb-6">
                 Warisan Kepercayaan
-                <span className="block text-gold italic font-accent">Turun-Temurun</span>
+                <span className="block text-gold font-cursive text-[1.15em]">Turun-Temurun</span>
               </h2>
               <div className="space-y-4 text-warm-gray text-elegant">
                 <p>
@@ -125,7 +125,7 @@ export function AboutPage() {
               Nilai-Nilai Kami
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-charcoal">
-              Prinsip yang <span className="text-gold italic font-accent">Kami Pegang</span>
+              Prinsip yang <span className="text-gold font-cursive text-[1.15em]">Kami Pegang</span>
             </h2>
           </div>
 
@@ -155,7 +155,7 @@ export function AboutPage() {
               Perjalanan Kami
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-charcoal">
-              Sejarah <span className="text-gold italic font-accent">Perkembangan</span>
+              Sejarah <span className="text-gold font-cursive text-[1.15em]">Perkembangan</span>
             </h2>
           </div>
 
@@ -192,7 +192,7 @@ export function AboutPage() {
               Tim Kami
             </p>
             <h2 className="font-display text-4xl md:text-5xl text-charcoal">
-              Orang-Orang di <span className="text-gold italic font-accent">Balik Layar</span>
+              Orang-Orang di <span className="text-gold font-cursive text-[1.15em]">Balik Layar</span>
             </h2>
           </div>
 

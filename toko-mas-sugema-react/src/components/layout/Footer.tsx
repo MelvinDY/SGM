@@ -18,7 +18,7 @@ export function Footer() {
       <div className="container pb-16">
         {/* Center CTA */}
         <div className="text-center mb-16">
-          <p className="font-accent text-gold italic text-lg mb-2">Perhiasan Berkualitas Tinggi</p>
+          <p className="font-cursive text-gold text-2xl mb-2">Perhiasan Berkualitas Tinggi</p>
           <h3 className="font-display text-3xl md:text-4xl text-charcoal mb-6">
             Kunjungi Showroom Kami
           </h3>
@@ -49,8 +49,8 @@ export function Footer() {
           {/* Brand */}
           <div className="text-center lg:text-left">
             <Link to="/" className="inline-block mb-4">
-              <span className="block font-display text-xl text-charcoal">Toko Mas</span>
-              <span className="block font-accent text-2xl italic text-gold -mt-1">Sugema</span>
+              <span className="block font-display text-lg text-charcoal">Toko Mas</span>
+              <span className="block font-cursive text-3xl text-gold -mt-2">Sugema</span>
             </Link>
             <div className="w-12 h-px bg-gold/50 mx-auto lg:mx-0 mb-4" />
             <p className="text-warm-gray font-accent leading-relaxed text-sm">
@@ -160,7 +160,7 @@ export function Footer() {
 
         {/* Large brand name - Bold 35% opacity */}
         <div className="absolute inset-x-0 bottom-0 translate-y-[45%]">
-          <p className="text-center font-display text-[6rem] md:text-[10rem] lg:text-[14rem] xl:text-[18rem] leading-none tracking-[0.08em] text-gold/35 whitespace-nowrap uppercase select-none pointer-events-none">
+          <p className="text-center font-cursive text-[7rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] leading-none text-gold/35 whitespace-nowrap select-none pointer-events-none">
             Sugema
           </p>
         </div>

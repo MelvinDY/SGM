@@ -52,10 +52,10 @@ export function Navbar() {
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="group">
-          <span className="block font-display text-xl tracking-wide text-charcoal">
+          <span className="block font-display text-lg tracking-wide text-charcoal">
             Toko Mas
           </span>
-          <span className="block font-accent text-2xl italic text-gold -mt-1">
+          <span className="block font-cursive text-3xl text-gold -mt-2">
             Sugema
           </span>
         </Link>

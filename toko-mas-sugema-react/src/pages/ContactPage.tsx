@@ -33,7 +33,7 @@ export function ContactPage() {
               Hubungi Kami
             </p>
             <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
-              Mari <span className="text-gold italic font-accent">Berkomunikasi</span>
+              Mari <span className="text-gold font-cursive text-[1.15em]">Berkomunikasi</span>
             </h1>
             <p className="text-warm-gray max-w-xl mx-auto text-elegant">
               Kami siap membantu Anda menemukan perhiasan impian. Hubungi kami
@@ -50,7 +50,7 @@ export function ContactPage() {
             {/* Contact Form */}
             <div>
               <h2 className="font-display text-3xl text-charcoal mb-8">
-                Kirim <span className="text-gold italic font-accent">Pesan</span>
+                Kirim <span className="text-gold font-cursive text-[1.15em]">Pesan</span>
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -133,7 +133,7 @@ export function ContactPage() {
             {/* Contact Info */}
             <div>
               <h2 className="font-display text-3xl text-charcoal mb-8">
-                Informasi <span className="text-gold italic font-accent">Kontak</span>
+                Informasi <span className="text-gold font-cursive text-[1.15em]">Kontak</span>
               </h2>
 
               <div className="space-y-8">

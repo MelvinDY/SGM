@@ -124,7 +124,7 @@ export function HomePage() {
                 className="font-display text-4xl md:text-5xl text-charcoal mb-6"
               >
                 Warisan Kepercayaan
-                <span className="block text-gold italic font-accent">Sejak 1990</span>
+                <span className="block text-gold font-cursive text-5xl md:text-6xl mt-1">Sejak 1990</span>
               </motion.h2>
               <motion.p
                 variants={fadeInUp}
@@ -199,7 +199,7 @@ export function HomePage() {
               variants={fadeInUp}
               className="font-display text-4xl md:text-5xl text-charcoal"
             >
-              Perhiasan <span className="text-gold italic font-accent">Pilihan</span>
+              Perhiasan <span className="text-gold font-cursive text-[1.15em]">Pilihan</span>
             </motion.h2>
           </motion.div>
 
@@ -308,7 +308,7 @@ export function HomePage() {
               variants={fadeInUp}
               className="font-display text-4xl md:text-5xl text-charcoal"
             >
-              Apa Kata <span className="text-gold italic font-accent">Pelanggan</span>
+              Apa Kata <span className="text-gold font-cursive text-[1.15em]">Pelanggan</span>
             </motion.h2>
           </motion.div>
 
@@ -361,7 +361,7 @@ export function HomePage() {
                 variants={fadeInUp}
                 className="font-display text-4xl md:text-5xl text-charcoal mb-8"
               >
-                Lokasi <span className="text-gold italic font-accent">Toko</span>
+                Lokasi <span className="text-gold font-cursive text-[1.15em]">Toko</span>
               </motion.h2>
 
               <motion.div variants={staggerContainer} className="space-y-6">

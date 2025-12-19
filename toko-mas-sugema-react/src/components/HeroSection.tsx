@@ -140,7 +140,7 @@ export function HeroSection() {
           Keindahan dalam
           <motion.span
             variants={itemVariants}
-            className="block text-gold italic font-accent mt-2"
+            className="block text-gold font-cursive text-6xl md:text-8xl lg:text-9xl mt-4"
           >
             Setiap Detail
           </motion.span>

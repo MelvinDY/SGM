@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 @theme {
   /* Cream & Gold Classic Theme */
@@ -9,12 +9,12 @@
   --color-gold-dark: #8B6914;
 
   /* Cream backgrounds */
-  --color-cream: #FAF8F5;
+  --color-cream: #FAF9F6;
   --color-cream-dark: #F5F1EB;
   --color-cream-darker: #EDE8E0;
 
   /* Text colors */
-  --color-charcoal: #1A1A1A;
+  --color-charcoal: #0A0A0A;
   --color-charcoal-light: #3D3D3D;
   --color-warm-gray: #6B6B6B;
   --color-warm-gray-light: #9B9B9B;
@@ -26,10 +26,11 @@
   --font-family-display: "Playfair Display", Georgia, serif;
   --font-family-body: "Inter", system-ui, sans-serif;
   --font-family-accent: "Cormorant Garamond", Georgia, serif;
+  --font-family-cursive: "Great Vibes", cursive;
 
   /* Theme colors for shadcn */
-  --color-background: #FAF8F5;
-  --color-foreground: #1A1A1A;
+  --color-background: #FAF9F6;
+  --color-foreground: #0A0A0A;
   --color-card: #FFFFFF;
   --color-card-foreground: #1A1A1A;
   --color-popover: #FFFFFF;
@@ -148,6 +149,10 @@
 
   .font-accent {
     font-family: var(--font-family-accent);
+  }
+
+  .font-cursive {
+    font-family: var(--font-family-cursive);
   }
 
   /* Gold colors */
