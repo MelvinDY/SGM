@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Tentang Toko Mas Sugema - Pusat perhiasan emas terpercaya di Karawang sejak 1990. Komitmen pada kualitas dan kepuasan pelanggan.">
+    <meta name="keywords" content="tentang toko mas sugema, sejarah toko emas karawang, toko emas terpercaya">
+    <title>Tentang Kami | Toko Mas Sugema Karawang</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--color-rich-black) 0%, var(--color-charcoal) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: var(--text-5xl);
+            color: var(--color-cream-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .page-subtitle {
+            font-size: var(--text-lg);
+            color: rgba(255, 254, 247, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-sm);
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary-gold);
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 254, 247, 0.5);
+        }
+
+        /* Story Section */
+        .story-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-cream-white);
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+            align-items: center;
+        }
+
+        .story-image {
+            position: relative;
+        }
+
+        .story-image .image-placeholder {
+            aspect-ratio: 4/3;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rich-black) 100%);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .story-image .image-placeholder i {
+            font-size: 5rem;
+            color: var(--color-primary-gold);
+            opacity: 0.5;
+        }
+
+        .story-badge {
+            position: absolute;
+            bottom: -20px;
+            right: -20px;
+            width: 150px;
+            height: 150px;
+            background: linear-gradient(135deg, var(--color-primary-gold) 0%, var(--color-deep-gold) 100%);
+            border-radius: var(--radius-full);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .story-badge .years {
+            font-family: var(--font-heading);
+            font-size: var(--text-4xl);
+            font-weight: 700;
+            color: var(--color-rich-black);
+            line-height: 1;
+        }
+
+        .story-badge .label {
+            font-size: var(--text-sm);
+            font-weight: 500;
+            color: var(--color-rich-black);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .story-content h2 {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .story-content p {
+            font-size: var(--text-lg);
+            line-height: 1.8;
+            margin-bottom: var(--space-lg);
+        }
+
+        /* Vision Mission Section */
+        .vision-mission {
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(135deg, var(--color-rich-black) 0%, var(--color-charcoal) 100%);
+        }
+
+        .vm-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-2xl);
+        }
+
+        .vm-card {
+            padding: var(--space-2xl);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-lg);
+            text-align: center;
+        }
+
+        .vm-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto var(--space-lg);
+            background: linear-gradient(135deg, var(--color-primary-gold) 0%, var(--color-deep-gold) 100%);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .vm-icon i {
+            font-size: var(--text-2xl);
+            color: var(--color-rich-black);
+        }
+
+        .vm-card h3 {
+            font-size: var(--text-2xl);
+            color: var(--color-cream-white);
+            margin-bottom: var(--space-lg);
+        }
+
+        .vm-card p {
+            font-size: var(--text-base);
+            color: rgba(255, 254, 247, 0.7);
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+
+        /* Values Section */
+        .values-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-off-white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .value-card {
+            text-align: center;
+            padding: var(--space-xl);
+            background-color: var(--color-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition-base);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .value-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto var(--space-lg);
+            background: linear-gradient(135deg, var(--color-primary-gold) 0%, var(--color-deep-gold) 100%);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .value-icon i {
+            font-size: var(--text-xl);
+            color: var(--color-rich-black);
+        }
+
+        .value-card h4 {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-md);
+        }
+
+        .value-card p {
+            font-size: var(--text-base);
+            color: var(--color-gray-dark);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Timeline Section */
+        .timeline-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-cream-white);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--color-primary-gold) 0%, var(--color-deep-gold) 100%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: var(--space-2xl);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+            padding-right: var(--space-2xl);
+            padding-left: 0;
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            padding-left: var(--space-2xl);
+        }
+
+        .timeline-content {
+            width: 50%;
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: var(--color-primary-gold);
+            border: 4px solid var(--color-cream-white);
+            border-radius: var(--radius-full);
+            box-shadow: var(--shadow-md);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            padding: var(--space-xs) var(--space-md);
+            background-color: var(--color-primary-gold);
+            color: var(--color-rich-black);
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--space-sm);
+        }
+
+        .timeline-title {
+            font-size: var(--text-xl);
+            margin-bottom: var(--space-sm);
+        }
+
+        .timeline-text {
+            font-size: var(--text-base);
+            color: var(--color-gray-dark);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-off-white);
+        }
+
+        .team-card {
+            text-align: center;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .team-image {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto var(--space-xl);
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rich-black) 100%);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 4px solid var(--color-primary-gold);
+        }
+
+        .team-image i {
+            font-size: 4rem;
+            color: var(--color-primary-gold);
+            opacity: 0.5;
+        }
+
+        .team-name {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-xs);
+        }
+
+        .team-role {
+            font-size: var(--text-base);
+            color: var(--color-primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-lg);
+        }
+
+        .team-bio {
+            font-size: var(--text-base);
+            color: var(--color-gray-dark);
+            line-height: 1.8;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(135deg, var(--color-rich-black) 0%, var(--color-charcoal) 100%);
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: var(--text-4xl);
+            color: var(--color-cream-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .cta-content p {
+            font-size: var(--text-lg);
+            color: rgba(255, 254, 247, 0.7);
+            max-width: 600px;
+            margin: 0 auto var(--space-xl);
+        }
+
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: var(--space-lg);
+            flex-wrap: wrap;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .story-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+
+            .story-image {
+                order: -1;
+            }
+
+            .story-badge {
+                width: 120px;
+                height: 120px;
+                bottom: -15px;
+                right: -15px;
+            }
+
+            .story-badge .years {
+                font-size: var(--text-3xl);
+            }
+
+            .vm-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item,
+            .timeline-item:nth-child(odd) {
+                flex-direction: row;
+            }
+
+            .timeline-content,
+            .timeline-item:nth-child(odd) .timeline-content {
+                width: calc(100% - 60px);
+                padding-left: var(--space-2xl) !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-dot {
+                left: 30px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-title {
+                font-size: var(--text-3xl);
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .cta-buttons .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+
+            .story-badge {
+                width: 100px;
+                height: 100px;
+            }
+
+            .story-badge .years {
+                font-size: var(--text-2xl);
+            }
+
+            .story-badge .label {
+                font-size: var(--text-xs);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">Toko Mas</span>
+                <span class="logo-accent">Sugema</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="produk.html" class="nav-link">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang.html" class="nav-link active">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontak.html" class="nav-link">Kontak</a>
+                </li>
+                <li class="nav-item nav-cta">
+                    <a href="https://wa.me/6281234567890" class="nav-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb" data-aos="fade-up">
+                <a href="../index.html">Beranda</a>
+                <span>/</span>
+                <span>Tentang Kami</span>
+            </nav>
+            <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">
+                Tentang <span class="gold-text">Kami</span>
+            </h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Mengenal lebih dekat Toko Mas Sugema, pusat perhiasan emas terpercaya di Karawang
+            </p>
+        </div>
+    </section>
+
+    <!-- Story Section -->
+    <section class="story-section">
+        <div class="container">
+            <div class="story-grid">
+                <div class="story-image" data-aos="fade-right">
+                    <div class="image-placeholder">
+                        <i class="fas fa-store"></i>
+                    </div>
+                    <div class="story-badge">
+                        <span class="years">34+</span>
+                        <span class="label">Tahun</span>
+                    </div>
+                </div>
+                <div class="story-content" data-aos="fade-left">
+                    <span class="section-subtitle">Cerita Kami</span>
+                    <h2>Perjalanan Panjang <span class="gold-text">Kepercayaan</span></h2>
+                    <p>
+                        Toko Mas Sugema didirikan pada tahun 1990 oleh Bapak H. Sugema dengan visi sederhana:
+                        menyediakan perhiasan emas berkualitas tinggi dengan harga yang jujur untuk masyarakat Karawang.
+                    </p>
+                    <p>
+                        Berawal dari sebuah kios kecil di pasar tradisional, kini Toko Mas Sugema telah berkembang
+                        menjadi salah satu toko emas terpercaya di Karawang. Selama lebih dari tiga dekade, kami
+                        telah melayani ribuan pelanggan setia dengan komitmen yang tidak berubah: kualitas,
+                        kejujuran, dan pelayanan terbaik.
+                    </p>
+                    <p>
+                        Kepercayaan pelanggan adalah aset terbesar kami. Setiap perhiasan yang kami jual dilengkapi
+                        dengan sertifikat keaslian dan garansi buyback, memastikan setiap pembelian adalah investasi
+                        yang aman dan menguntungkan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision & Mission -->
+    <section class="vision-mission">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--color-primary-gold);">Visi & Misi</span>
+                <h2 class="section-title" style="color: var(--color-cream-white);">
+                    Komitmen <span class="gold-text">Kami</span>
+                </h2>
+            </div>
+
+            <div class="vm-grid">
+                <div class="vm-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="vm-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Visi</h3>
+                    <p>
+                        Menjadi toko perhiasan emas terdepan dan paling terpercaya di Karawang dan sekitarnya,
+                        yang dikenal karena kualitas produk, integritas, dan pelayanan prima kepada setiap pelanggan.
+                    </p>
+                </div>
+
+                <div class="vm-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="vm-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Misi</h3>
+                    <p>
+                        Menyediakan perhiasan emas berkualitas tinggi dengan harga transparan dan bersaing.
+                        Memberikan pelayanan profesional dan ramah. Membangun hubungan jangka panjang berdasarkan
+                        kepercayaan dengan setiap pelanggan.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="values-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Nilai-Nilai Kami</span>
+                <h2 class="section-title">Prinsip yang <span class="gold-text">Kami Pegang</span></h2>
+            </div>
+
+            <div class="values-grid">
+                <div class="value-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="value-icon">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4>Kualitas</h4>
+                    <p>Hanya menjual emas murni dengan kadar yang terjamin dan terverifikasi.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="value-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <h4>Kepercayaan</h4>
+                    <p>Membangun hubungan berdasarkan kejujuran dan transparansi dengan pelanggan.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="value-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h4>Pelayanan</h4>
+                    <p>Memberikan pengalaman berbelanja yang nyaman dan memuaskan.</p>
+                </div>
+
+                <div class="value-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="value-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h4>Integritas</h4>
+                    <p>Menjunjung tinggi etika bisnis dalam setiap transaksi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="timeline-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Perjalanan Kami</span>
+                <h2 class="section-title">Sejarah <span class="gold-text">Toko Mas Sugema</span></h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1990</span>
+                        <h4 class="timeline-title">Awal Mula</h4>
+                        <p class="timeline-text">
+                            Toko Mas Sugema didirikan oleh H. Sugema dengan modal seadanya di Pasar Johar Karawang.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-year">1998</span>
+                        <h4 class="timeline-title">Bertahan di Krisis</h4>
+                        <p class="timeline-text">
+                            Berhasil melewati krisis ekonomi dengan mempertahankan kepercayaan pelanggan.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2005</span>
+                        <h4 class="timeline-title">Ekspansi Pertama</h4>
+                        <p class="timeline-text">
+                            Membuka toko baru yang lebih besar di lokasi strategis Jl. Tuparev.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2015</span>
+                        <h4 class="timeline-title">Renovasi Modern</h4>
+                        <p class="timeline-text">
+                            Renovasi total dengan konsep showroom modern untuk kenyamanan pelanggan.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item" data-aos="fade-up">
+                    <div class="timeline-content">
+                        <span class="timeline-year">2024</span>
+                        <h4 class="timeline-title">Era Digital</h4>
+                        <p class="timeline-text">
+                            Meluncurkan platform digital untuk menjangkau lebih banyak pelanggan.
+                        </p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Pemilik</span>
+                <h2 class="section-title">Pendiri <span class="gold-text">Toko Mas Sugema</span></h2>
+            </div>
+
+            <div class="team-card" data-aos="fade-up">
+                <div class="team-image">
+                    <i class="fas fa-user"></i>
+                </div>
+                <h3 class="team-name">H. Sugema</h3>
+                <p class="team-role">Pendiri & Pemilik</p>
+                <p class="team-bio">
+                    Dengan pengalaman lebih dari 40 tahun di industri perhiasan emas, H. Sugema mendedikasikan
+                    hidupnya untuk menyediakan perhiasan berkualitas dengan harga yang jujur. Beliau percaya
+                    bahwa kepercayaan pelanggan adalah aset paling berharga dalam berbisnis.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="fade-up">
+                <h2>Siap Memiliki Perhiasan <span class="gold-text">Impian Anda?</span></h2>
+                <p>
+                    Kunjungi toko kami atau hubungi via WhatsApp untuk konsultasi gratis
+                    dan melihat koleksi lengkap kami.
+                </p>
+                <div class="cta-buttons">
+                    <a href="produk.html" class="btn btn-primary">
+                        <span>Lihat Koleksi</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="https://wa.me/6281234567890" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>Hubungi Kami</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo">
+                            <span class="logo-text">Toko Mas</span>
+                            <span class="logo-accent">Sugema</span>
+                        </a>
+                        <p class="footer-description">
+                            Pusat perhiasan emas berkualitas tinggi di Karawang.
+                            Melayani dengan kepercayaan sejak 1990.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4 class="footer-title">Menu</h4>
+                        <ul>
+                            <li><a href="../index.html">Beranda</a></li>
+                            <li><a href="produk.html">Produk</a></li>
+                            <li><a href="tentang.html">Tentang Kami</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4 class="footer-title">Kategori</h4>
+                        <ul>
+                            <li><a href="produk.html">Cincin Emas</a></li>
+                            <li><a href="produk.html">Kalung Emas</a></li>
+                            <li><a href="produk.html">Gelang Emas</a></li>
+                            <li><a href="produk.html">Anting Emas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Kontak</h4>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Jl. Tuparev No. 123, Karawang</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>(0267) 123-4567</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <span>+62 812-3456-7890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Toko Mas Sugema. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat dengan Kami</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+</body>
+</html>

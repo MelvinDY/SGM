@@ -1,0 +1,577 @@
+/* ============================================
+   TOKO MAS SUGEMA - Animations Stylesheet
+   Elegant & Subtle Animations
+   ============================================ */
+
+/* ============================================
+   GOLD SHIMMER EFFECT
+   ============================================ */
+@keyframes goldShimmer {
+    0% {
+        background-position: -200% center;
+    }
+    100% {
+        background-position: 200% center;
+    }
+}
+
+.shimmer-effect {
+    background: linear-gradient(
+        90deg,
+        var(--color-primary-gold) 0%,
+        var(--color-light-gold) 25%,
+        var(--color-primary-gold) 50%,
+        var(--color-light-gold) 75%,
+        var(--color-primary-gold) 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: goldShimmer 3s linear infinite;
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+@keyframes goldGlow {
+    0%, 100% {
+        box-shadow: 0 0 5px rgba(212, 175, 55, 0.3),
+                    0 0 10px rgba(212, 175, 55, 0.2),
+                    0 0 15px rgba(212, 175, 55, 0.1);
+    }
+    50% {
+        box-shadow: 0 0 10px rgba(212, 175, 55, 0.5),
+                    0 0 20px rgba(212, 175, 55, 0.3),
+                    0 0 30px rgba(212, 175, 55, 0.2);
+    }
+}
+
+.glow-effect {
+    animation: goldGlow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   PULSE ANIMATION
+   ============================================ */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.pulse-effect {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* WhatsApp Button Pulse */
+@keyframes whatsappPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+.whatsapp-float {
+    animation: whatsappPulse 2s ease-out infinite;
+}
+
+/* ============================================
+   FADE ANIMATIONS
+   ============================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.6s ease forwards;
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.fade-in-down {
+    animation: fadeInDown 0.6s ease forwards;
+}
+
+.fade-in-left {
+    animation: fadeInLeft 0.6s ease forwards;
+}
+
+.fade-in-right {
+    animation: fadeInRight 0.6s ease forwards;
+}
+
+/* ============================================
+   SCALE ANIMATIONS
+   ============================================ */
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes scaleUp {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+.scale-in {
+    animation: scaleIn 0.5s ease forwards;
+}
+
+/* ============================================
+   SLIDE ANIMATIONS
+   ============================================ */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   FLOATING ANIMATION
+   ============================================ */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-effect {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ============================================
+   ROTATE ANIMATION
+   ============================================ */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateBack {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.rotate-effect {
+    animation: rotate 20s linear infinite;
+}
+
+/* ============================================
+   BORDER ANIMATION
+   ============================================ */
+@keyframes borderGlow {
+    0%, 100% {
+        border-color: var(--color-primary-gold);
+    }
+    50% {
+        border-color: var(--color-light-gold);
+    }
+}
+
+.border-glow {
+    animation: borderGlow 2s ease-in-out infinite;
+}
+
+/* ============================================
+   TEXT REVEAL ANIMATION
+   ============================================ */
+@keyframes textReveal {
+    0% {
+        clip-path: inset(0 100% 0 0);
+    }
+    100% {
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.text-reveal {
+    animation: textReveal 1s ease forwards;
+}
+
+/* ============================================
+   UNDERLINE ANIMATION
+   ============================================ */
+@keyframes underlineExpand {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.underline-animate::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--color-primary-gold);
+    animation: underlineExpand 0.3s ease forwards;
+}
+
+/* ============================================
+   BUTTON HOVER ANIMATIONS
+   ============================================ */
+.btn {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.2),
+        transparent
+    );
+    transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+/* ============================================
+   CARD HOVER ANIMATIONS
+   ============================================ */
+.product-card,
+.feature-card {
+    transition: transform var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+.product-card::before,
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        135deg,
+        transparent 0%,
+        rgba(212, 175, 55, 0.05) 50%,
+        transparent 100%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.product-card:hover::before,
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* ============================================
+   IMAGE HOVER EFFECTS
+   ============================================ */
+.product-image .image-placeholder {
+    transition: transform var(--transition-slow);
+}
+
+.product-card:hover .product-image .image-placeholder {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   STAGGER ANIMATIONS
+   ============================================ */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+
+/* ============================================
+   LOADING ANIMATION
+   ============================================ */
+@keyframes loading {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--color-gray-light);
+    border-top-color: var(--color-primary-gold);
+    border-radius: 50%;
+    animation: loading 1s linear infinite;
+}
+
+/* ============================================
+   SKELETON LOADING
+   ============================================ */
+@keyframes skeleton {
+    0% {
+        background-position: -200% 0;
+    }
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+.skeleton {
+    background: linear-gradient(
+        90deg,
+        var(--color-gray-light) 25%,
+        var(--color-cream-white) 50%,
+        var(--color-gray-light) 75%
+    );
+    background-size: 200% 100%;
+    animation: skeleton 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   PARALLAX BACKGROUND
+   ============================================ */
+.parallax-bg {
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* ============================================
+   SCROLL REVEAL CLASSES
+   ============================================ */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.reveal-left.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.6s ease;
+}
+
+.reveal-right.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* ============================================
+   NAVBAR SCROLL ANIMATION
+   ============================================ */
+.navbar {
+    transition: background-color var(--transition-base),
+                padding var(--transition-base),
+                box-shadow var(--transition-base);
+}
+
+/* ============================================
+   PAGE TRANSITION
+   ============================================ */
+.page-transition {
+    animation: fadeIn 0.4s ease;
+}
+
+/* ============================================
+   DECORATIVE ANIMATIONS
+   ============================================ */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.sparkle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: var(--color-primary-gold);
+    border-radius: 50%;
+    animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Diamond sparkle effect */
+@keyframes diamondSparkle {
+    0%, 100% {
+        opacity: 0.3;
+        transform: scale(1) rotate(0deg);
+    }
+    25% {
+        opacity: 1;
+        transform: scale(1.2) rotate(90deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scale(1) rotate(180deg);
+    }
+    75% {
+        opacity: 1;
+        transform: scale(1.2) rotate(270deg);
+    }
+}
+
+/* ============================================
+   REDUCED MOTION PREFERENCE
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .parallax-bg {
+        background-attachment: scroll;
+    }
+}

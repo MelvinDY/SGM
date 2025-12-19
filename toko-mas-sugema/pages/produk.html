@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Koleksi perhiasan emas berkualitas tinggi dari Toko Mas Sugema. Cincin, kalung, gelang, anting emas murni dengan sertifikat keaslian.">
+    <meta name="keywords" content="cincin emas, kalung emas, gelang emas, anting emas, perhiasan emas karawang">
+    <title>Produk - Koleksi Emas | Toko Mas Sugema</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--color-rich-black) 0%, var(--color-charcoal) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: var(--text-5xl);
+            color: var(--color-cream-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .page-subtitle {
+            font-size: var(--text-lg);
+            color: rgba(255, 254, 247, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-sm);
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary-gold);
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 254, 247, 0.5);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-cream-white);
+        }
+
+        /* Category Filter */
+        .category-filter {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: var(--space-md);
+            margin-bottom: var(--space-3xl);
+        }
+
+        .filter-btn {
+            padding: var(--space-sm) var(--space-xl);
+            font-family: var(--font-body);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--color-gray-dark);
+            background-color: transparent;
+            border: 2px solid var(--color-gray-light);
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: var(--color-rich-black);
+            background-color: var(--color-primary-gold);
+            border-color: var(--color-primary-gold);
+        }
+
+        /* Products Grid - Extended */
+        .products-page-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-xl);
+        }
+
+        .product-card {
+            position: relative;
+        }
+
+        .product-card .product-actions {
+            position: absolute;
+            bottom: 100%;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: var(--space-sm);
+            padding: var(--space-md);
+            background: linear-gradient(to top, rgba(26, 26, 26, 0.9), transparent);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all var(--transition-base);
+        }
+
+        .product-card:hover .product-actions {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .action-btn {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-cream-white);
+            border-radius: var(--radius-full);
+            color: var(--color-rich-black);
+            transition: all var(--transition-base);
+        }
+
+        .action-btn:hover {
+            background-color: var(--color-primary-gold);
+        }
+
+        /* Quick View Modal */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: var(--space-xl);
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background-color: var(--color-white);
+            border-radius: var(--radius-lg);
+            max-width: 900px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--space-md);
+            right: var(--space-md);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-rich-black);
+            color: var(--color-cream-white);
+            border: none;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            z-index: 10;
+            transition: all var(--transition-base);
+        }
+
+        .modal-close:hover {
+            background-color: var(--color-primary-gold);
+            color: var(--color-rich-black);
+        }
+
+        .modal-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+
+        .modal-image {
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--color-charcoal) 0%, var(--color-rich-black) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-image i {
+            font-size: 5rem;
+            color: var(--color-primary-gold);
+            opacity: 0.5;
+        }
+
+        .modal-details {
+            padding: var(--space-2xl);
+        }
+
+        .modal-category {
+            font-size: var(--text-sm);
+            color: var(--color-primary-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: var(--space-sm);
+        }
+
+        .modal-title {
+            font-size: var(--text-3xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .modal-description {
+            font-size: var(--text-base);
+            line-height: 1.8;
+            margin-bottom: var(--space-xl);
+        }
+
+        .modal-specs {
+            margin-bottom: var(--space-xl);
+        }
+
+        .spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: var(--space-md) 0;
+            border-bottom: 1px solid var(--color-gray-light);
+        }
+
+        .spec-label {
+            font-weight: 500;
+            color: var(--color-gray-dark);
+        }
+
+        .spec-value {
+            font-weight: 600;
+            color: var(--color-rich-black);
+        }
+
+        .modal-cta {
+            display: flex;
+            gap: var(--space-md);
+        }
+
+        /* Load More */
+        .load-more {
+            text-align: center;
+            margin-top: var(--space-3xl);
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .products-page-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .modal-image {
+                max-height: 300px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .products-page-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-md);
+            }
+
+            .page-title {
+                font-size: var(--text-3xl);
+            }
+
+            .category-filter {
+                gap: var(--space-sm);
+            }
+
+            .filter-btn {
+                padding: var(--space-xs) var(--space-md);
+                font-size: var(--text-xs);
+            }
+        }
+
+        @media (max-width: 575px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+
+            .modal-details {
+                padding: var(--space-lg);
+            }
+
+            .modal-cta {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">Toko Mas</span>
+                <span class="logo-accent">Sugema</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="produk.html" class="nav-link active">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang.html" class="nav-link">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontak.html" class="nav-link">Kontak</a>
+                </li>
+                <li class="nav-item nav-cta">
+                    <a href="https://wa.me/6281234567890" class="nav-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb" data-aos="fade-up">
+                <a href="../index.html">Beranda</a>
+                <span>/</span>
+                <span>Produk</span>
+            </nav>
+            <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">
+                Koleksi <span class="gold-text">Perhiasan</span>
+            </h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Temukan perhiasan emas berkualitas tinggi untuk melengkapi penampilan Anda
+            </p>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products-section">
+        <div class="container">
+            <!-- Category Filter -->
+            <div class="category-filter" data-aos="fade-up">
+                <button class="filter-btn active" data-filter="all">Semua</button>
+                <button class="filter-btn" data-filter="cincin">Cincin</button>
+                <button class="filter-btn" data-filter="kalung">Kalung</button>
+                <button class="filter-btn" data-filter="gelang">Gelang</button>
+                <button class="filter-btn" data-filter="anting">Anting</button>
+                <button class="filter-btn" data-filter="liontin">Liontin</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="products-page-grid">
+                <!-- Cincin Products -->
+                <div class="product-card" data-category="cincin" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view" data-modal="modal-1">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                        <span class="product-badge">Terlaris</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Cincin</span>
+                        <h3 class="product-name">Cincin Emas Berlian</h3>
+                        <p class="product-weight">Berat: 5 gram | 24 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="cincin" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Cincin</span>
+                        <h3 class="product-name">Cincin Tunangan Classic</h3>
+                        <p class="product-weight">Berat: 3 gram | 22 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="cincin" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-ring"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                        <span class="product-badge new">Baru</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Cincin</span>
+                        <h3 class="product-name">Cincin Ukir Tradisional</h3>
+                        <p class="product-weight">Berat: 8 gram | 24 Karat</p>
+                    </div>
+                </div>
+
+                <!-- Kalung Products -->
+                <div class="product-card" data-category="kalung" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Kalung</span>
+                        <h3 class="product-name">Kalung Rantai Italia</h3>
+                        <p class="product-weight">Berat: 10 gram | 22 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kalung" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                        <span class="product-badge">Terlaris</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Kalung</span>
+                        <h3 class="product-name">Kalung Bunga Mawar</h3>
+                        <p class="product-weight">Berat: 15 gram | 24 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="kalung" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Kalung</span>
+                        <h3 class="product-name">Kalung Simpel Minimalis</h3>
+                        <p class="product-weight">Berat: 5 gram | 18 Karat</p>
+                    </div>
+                </div>
+
+                <!-- Gelang Products -->
+                <div class="product-card" data-category="gelang" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                        <span class="product-badge new">Baru</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Gelang</span>
+                        <h3 class="product-name">Gelang Emas Ukir</h3>
+                        <p class="product-weight">Berat: 15 gram | 24 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gelang" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Gelang</span>
+                        <h3 class="product-name">Gelang Rantai Tebal</h3>
+                        <p class="product-weight">Berat: 20 gram | 22 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="gelang" data-aos="fade-up" data-aos-delay="100">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-circle"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Gelang</span>
+                        <h3 class="product-name">Gelang Keroncong</h3>
+                        <p class="product-weight">Berat: 10 gram | 24 Karat</p>
+                    </div>
+                </div>
+
+                <!-- Anting Products -->
+                <div class="product-card" data-category="anting" data-aos="fade-up" data-aos-delay="150">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Anting</span>
+                        <h3 class="product-name">Anting Giwang Mutiara</h3>
+                        <p class="product-weight">Berat: 3 gram | 22 Karat</p>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="anting" data-aos="fade-up" data-aos-delay="200">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                        <span class="product-badge">Terlaris</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Anting</span>
+                        <h3 class="product-name">Anting Jurai Panjang</h3>
+                        <p class="product-weight">Berat: 5 gram | 24 Karat</p>
+                    </div>
+                </div>
+
+                <!-- Liontin Products -->
+                <div class="product-card" data-category="liontin" data-aos="fade-up" data-aos-delay="250">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="product-overlay">
+                            <a href="#" class="product-view">
+                                <i class="fas fa-eye"></i>
+                            </a>
+                        </div>
+                        <span class="product-badge new">Baru</span>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">Liontin</span>
+                        <h3 class="product-name">Liontin Hati Love</h3>
+                        <p class="product-weight">Berat: 2 gram | 24 Karat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More -->
+            <div class="load-more" data-aos="fade-up">
+                <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20melihat%20lebih%20banyak%20koleksi%20perhiasan" class="btn btn-outline" target="_blank">
+                    <span>Lihat Lebih Banyak via WhatsApp</span>
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick View Modal -->
+    <div class="modal-overlay" id="quick-view-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <i class="fas fa-ring"></i>
+                </div>
+                <div class="modal-details">
+                    <span class="modal-category">Cincin</span>
+                    <h2 class="modal-title">Cincin Emas Berlian</h2>
+                    <p class="modal-description">
+                        Cincin emas berlian dengan desain elegan dan mewah. Dibuat dari emas murni 24 karat
+                        dengan berlian asli berkualitas tinggi. Cocok untuk acara pernikahan, tunangan,
+                        atau hadiah spesial untuk orang tercinta.
+                    </p>
+                    <div class="modal-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Berat Emas</span>
+                            <span class="spec-value">5 gram</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Kadar Emas</span>
+                            <span class="spec-value">24 Karat</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Berlian</span>
+                            <span class="spec-value">0.5 ct</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Sertifikat</span>
+                            <span class="spec-value">Tersedia</span>
+                        </div>
+                    </div>
+                    <div class="modal-cta">
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20tertarik%20dengan%20Cincin%20Emas%20Berlian" class="btn btn-primary" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>Hubungi via WhatsApp</span>
+                        </a>
+                        <a href="kontak.html" class="btn btn-outline">
+                            <span>Kunjungi Toko</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo">
+                            <span class="logo-text">Toko Mas</span>
+                            <span class="logo-accent">Sugema</span>
+                        </a>
+                        <p class="footer-description">
+                            Pusat perhiasan emas berkualitas tinggi di Karawang.
+                            Melayani dengan kepercayaan sejak 1990.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4 class="footer-title">Menu</h4>
+                        <ul>
+                            <li><a href="../index.html">Beranda</a></li>
+                            <li><a href="produk.html">Produk</a></li>
+                            <li><a href="tentang.html">Tentang Kami</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4 class="footer-title">Kategori</h4>
+                        <ul>
+                            <li><a href="produk.html">Cincin Emas</a></li>
+                            <li><a href="produk.html">Kalung Emas</a></li>
+                            <li><a href="produk.html">Gelang Emas</a></li>
+                            <li><a href="produk.html">Anting Emas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Kontak</h4>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Jl. Tuparev No. 123, Karawang</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>(0267) 123-4567</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <span>+62 812-3456-7890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Toko Mas Sugema. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat dengan Kami</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+
+    <script>
+        // Product Filter
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+
+                    const filter = this.dataset.filter;
+
+                    productCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    });
+                });
+            });
+
+            // Quick View Modal
+            const modal = document.getElementById('quick-view-modal');
+            const modalClose = document.getElementById('modal-close');
+            const productViews = document.querySelectorAll('.product-view');
+
+            productViews.forEach(view => {
+                view.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            modalClose.addEventListener('click', function() {
+                modal.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    modal.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

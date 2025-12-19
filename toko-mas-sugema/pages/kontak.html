@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hubungi Toko Mas Sugema - Pusat perhiasan emas di Karawang. Alamat, telepon, WhatsApp, dan jam operasional.">
+    <meta name="keywords" content="kontak toko mas sugema, alamat toko emas karawang, whatsapp toko emas">
+    <title>Kontak | Toko Mas Sugema Karawang</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Styles -->
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/animations.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+
+    <style>
+        /* Page-specific styles */
+        .page-header {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, var(--color-rich-black) 0%, var(--color-charcoal) 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(184, 134, 11, 0.1) 0%, transparent 50%);
+        }
+
+        .page-header .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .page-title {
+            font-size: var(--text-5xl);
+            color: var(--color-cream-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .page-subtitle {
+            font-size: var(--text-lg);
+            color: rgba(255, 254, 247, 0.7);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--space-sm);
+            margin-bottom: var(--space-lg);
+            font-size: var(--text-sm);
+        }
+
+        .breadcrumb a {
+            color: var(--color-primary-gold);
+        }
+
+        .breadcrumb span {
+            color: rgba(255, 254, 247, 0.5);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-cream-white);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-3xl);
+        }
+
+        /* Contact Form */
+        .contact-form-wrapper {
+            background-color: var(--color-white);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+        }
+
+        .form-title {
+            font-size: var(--text-2xl);
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-group {
+            margin-bottom: var(--space-lg);
+        }
+
+        .form-label {
+            display: block;
+            font-size: var(--text-sm);
+            font-weight: 500;
+            margin-bottom: var(--space-sm);
+            color: var(--color-rich-black);
+        }
+
+        .form-label .required {
+            color: #dc3545;
+        }
+
+        .form-input,
+        .form-textarea {
+            width: 100%;
+            padding: var(--space-md);
+            font-family: var(--font-body);
+            font-size: var(--text-base);
+            color: var(--color-rich-black);
+            background-color: var(--color-off-white);
+            border: 2px solid var(--color-gray-light);
+            border-radius: var(--radius-md);
+            transition: all var(--transition-base);
+        }
+
+        .form-input:focus,
+        .form-textarea:focus {
+            outline: none;
+            border-color: var(--color-primary-gold);
+            background-color: var(--color-white);
+            box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: var(--color-gray-medium);
+        }
+
+        .form-input.error,
+        .form-textarea.error {
+            border-color: #dc3545;
+        }
+
+        .form-textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+        }
+
+        .form-submit {
+            width: 100%;
+        }
+
+        .form-note {
+            font-size: var(--text-sm);
+            color: var(--color-gray-medium);
+            text-align: center;
+            margin-top: var(--space-lg);
+        }
+
+        /* Contact Info Side */
+        .contact-info-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: var(--space-xl);
+        }
+
+        .contact-card {
+            background-color: var(--color-white);
+            padding: var(--space-xl);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            gap: var(--space-lg);
+            transition: all var(--transition-base);
+        }
+
+        .contact-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-3px);
+        }
+
+        .contact-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--color-primary-gold) 0%, var(--color-deep-gold) 100%);
+            border-radius: var(--radius-full);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .contact-card-icon i {
+            font-size: var(--text-xl);
+            color: var(--color-rich-black);
+        }
+
+        .contact-card-content h4 {
+            font-size: var(--text-lg);
+            margin-bottom: var(--space-sm);
+        }
+
+        .contact-card-content p {
+            font-size: var(--text-base);
+            color: var(--color-gray-dark);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .contact-card-content a {
+            color: var(--color-gray-dark);
+            transition: color var(--transition-base);
+        }
+
+        .contact-card-content a:hover {
+            color: var(--color-primary-gold);
+        }
+
+        /* WhatsApp CTA Card */
+        .whatsapp-cta-card {
+            background: linear-gradient(135deg, var(--color-whatsapp) 0%, #20BA5C 100%);
+            padding: var(--space-2xl);
+            border-radius: var(--radius-lg);
+            text-align: center;
+            color: var(--color-white);
+        }
+
+        .whatsapp-cta-card h3 {
+            font-size: var(--text-2xl);
+            color: var(--color-white);
+            margin-bottom: var(--space-md);
+        }
+
+        .whatsapp-cta-card p {
+            font-size: var(--text-base);
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: var(--space-lg);
+        }
+
+        .whatsapp-cta-card .btn {
+            background-color: var(--color-white);
+            color: var(--color-whatsapp);
+            border-color: var(--color-white);
+        }
+
+        .whatsapp-cta-card .btn:hover {
+            background-color: transparent;
+            color: var(--color-white);
+        }
+
+        /* Map Section */
+        .map-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-off-white);
+        }
+
+        .map-container-full {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .map-container-full iframe {
+            display: block;
+            width: 100%;
+            height: 500px;
+        }
+
+        /* Store Hours */
+        .hours-section {
+            padding: var(--space-4xl) 0;
+            background: linear-gradient(135deg, var(--color-rich-black) 0%, var(--color-charcoal) 100%);
+        }
+
+        .hours-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: var(--space-xl);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hours-card {
+            text-align: center;
+            padding: var(--space-xl);
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: var(--radius-lg);
+        }
+
+        .hours-card i {
+            font-size: var(--text-3xl);
+            color: var(--color-primary-gold);
+            margin-bottom: var(--space-md);
+        }
+
+        .hours-card h4 {
+            font-size: var(--text-lg);
+            color: var(--color-cream-white);
+            margin-bottom: var(--space-sm);
+        }
+
+        .hours-card p {
+            font-size: var(--text-base);
+            color: rgba(255, 254, 247, 0.7);
+            margin-bottom: 0;
+        }
+
+        .hours-card.highlight {
+            border-color: var(--color-primary-gold);
+            background: rgba(212, 175, 55, 0.1);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            padding: var(--space-4xl) 0;
+            background-color: var(--color-cream-white);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background-color: var(--color-white);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-lg);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .faq-question:hover {
+            background-color: var(--color-off-white);
+        }
+
+        .faq-question h4 {
+            font-size: var(--text-lg);
+            margin: 0;
+            padding-right: var(--space-md);
+        }
+
+        .faq-question i {
+            color: var(--color-primary-gold);
+            transition: transform var(--transition-base);
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height var(--transition-base);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-answer p {
+            padding: 0 var(--space-lg) var(--space-lg);
+            font-size: var(--text-base);
+            color: var(--color-gray-dark);
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            padding: var(--space-lg);
+            background-color: #d4edda;
+            border: 1px solid #c3e6cb;
+            border-radius: var(--radius-md);
+            margin-bottom: var(--space-lg);
+        }
+
+        .success-message.show {
+            display: block;
+        }
+
+        .success-message p {
+            color: #155724;
+            margin: 0;
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 991px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: var(--space-2xl);
+            }
+
+            .hours-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .page-title {
+                font-size: var(--text-3xl);
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .map-container-full iframe {
+                height: 350px;
+            }
+        }
+
+        @media (max-width: 575px) {
+            .page-header {
+                padding: 120px 0 60px;
+            }
+
+            .contact-form-wrapper {
+                padding: var(--space-lg);
+            }
+
+            .contact-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .contact-card-icon {
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar scrolled" id="navbar">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="logo-text">Toko Mas</span>
+                <span class="logo-accent">Sugema</span>
+            </a>
+
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link">Beranda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="produk.html" class="nav-link">Produk</a>
+                </li>
+                <li class="nav-item">
+                    <a href="tentang.html" class="nav-link">Tentang Kami</a>
+                </li>
+                <li class="nav-item">
+                    <a href="kontak.html" class="nav-link active">Kontak</a>
+                </li>
+                <li class="nav-item nav-cta">
+                    <a href="https://wa.me/6281234567890" class="nav-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                        <span>WhatsApp</span>
+                    </a>
+                </li>
+            </ul>
+
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span class="hamburger"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <nav class="breadcrumb" data-aos="fade-up">
+                <a href="../index.html">Beranda</a>
+                <span>/</span>
+                <span>Kontak</span>
+            </nav>
+            <h1 class="page-title" data-aos="fade-up" data-aos-delay="100">
+                Hubungi <span class="gold-text">Kami</span>
+            </h1>
+            <p class="page-subtitle" data-aos="fade-up" data-aos-delay="200">
+                Ada pertanyaan atau ingin berkonsultasi? Kami siap membantu Anda
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper" data-aos="fade-right">
+                    <h3 class="form-title">Kirim Pesan</h3>
+
+                    <div class="success-message" id="success-message">
+                        <p><i class="fas fa-check-circle"></i> Pesan Anda telah terkirim! Kami akan segera menghubungi Anda.</p>
+                    </div>
+
+                    <form id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="form-label" for="name">
+                                    Nama Lengkap <span class="required">*</span>
+                                </label>
+                                <input type="text" id="name" name="name" class="form-input" placeholder="Masukkan nama Anda" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="form-label" for="phone">
+                                    Nomor WhatsApp <span class="required">*</span>
+                                </label>
+                                <input type="tel" id="phone" name="phone" class="form-input" placeholder="08xx-xxxx-xxxx" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="email">
+                                Email
+                            </label>
+                            <input type="email" id="email" name="email" class="form-input" placeholder="email@contoh.com">
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="subject">
+                                Subjek <span class="required">*</span>
+                            </label>
+                            <input type="text" id="subject" name="subject" class="form-input" placeholder="Tentang apa pesan Anda?" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="form-label" for="message">
+                                Pesan <span class="required">*</span>
+                            </label>
+                            <textarea id="message" name="message" class="form-textarea" placeholder="Tuliskan pesan Anda di sini..." required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary form-submit">
+                            <span>Kirim Pesan</span>
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+
+                    <p class="form-note">
+                        Atau hubungi kami langsung melalui WhatsApp untuk respon lebih cepat
+                    </p>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info-wrapper" data-aos="fade-left">
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Alamat Toko</h4>
+                            <p>
+                                Jl. Tuparev No. 123<br>
+                                Karawang Barat, Kabupaten Karawang<br>
+                                Jawa Barat 41311
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Telepon</h4>
+                            <p>
+                                <a href="tel:+62267123456">(0267) 123-4567</a><br>
+                                <a href="tel:+62267123457">(0267) 123-4568</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="contact-card">
+                        <div class="contact-card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-card-content">
+                            <h4>Email</h4>
+                            <p>
+                                <a href="mailto:info@tokomassugema.com">info@tokomassugema.com</a><br>
+                                <a href="mailto:sales@tokomassugema.com">sales@tokomassugema.com</a>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="whatsapp-cta-card">
+                        <h3>Chat via WhatsApp</h3>
+                        <p>Respon cepat untuk pertanyaan Anda. Tim kami siap membantu!</p>
+                        <a href="https://wa.me/6281234567890?text=Halo,%20saya%20ingin%20bertanya%20tentang%20perhiasan%20emas" class="btn" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                            <span>+62 812-3456-7890</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Store Hours Section -->
+    <section class="hours-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle" style="color: var(--color-primary-gold);">Jam Operasional</span>
+                <h2 class="section-title" style="color: var(--color-cream-white);">
+                    Kapan Kami <span class="gold-text">Buka?</span>
+                </h2>
+            </div>
+
+            <div class="hours-grid">
+                <div class="hours-card" data-aos="fade-up" data-aos-delay="100">
+                    <i class="fas fa-calendar-week"></i>
+                    <h4>Senin - Jumat</h4>
+                    <p>09:00 - 21:00 WIB</p>
+                </div>
+
+                <div class="hours-card highlight" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-calendar-day"></i>
+                    <h4>Sabtu</h4>
+                    <p>09:00 - 21:00 WIB</p>
+                </div>
+
+                <div class="hours-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-sun"></i>
+                    <h4>Minggu</h4>
+                    <p>10:00 - 18:00 WIB</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">Lokasi</span>
+                <h2 class="section-title">Temukan <span class="gold-text">Toko Kami</span></h2>
+            </div>
+
+            <div class="map-container-full" data-aos="fade-up">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126748.56493876068!2d107.2541377!3d-6.3227026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e699f1a7d67c527%3A0xf1e30c8a5d3fe543!2sKarawang%2C%20Karawang%20Regency%2C%20West%20Java!5e0!3m2!1sen!2sid!4v1699876543210!5m2!1sen!2sid"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Lokasi Toko Mas Sugema">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-subtitle">FAQ</span>
+                <h2 class="section-title">Pertanyaan <span class="gold-text">Umum</span></h2>
+            </div>
+
+            <div class="faq-grid">
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
+                    <div class="faq-question">
+                        <h4>Apakah tersedia layanan buyback?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Ya, kami menyediakan layanan buyback dengan harga kompetitif. Anda bisa menjual kembali
+                            perhiasan emas yang dibeli di toko kami dengan harga pasar terkini dikurangi biaya
+                            administrasi minimal.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="150">
+                    <div class="faq-question">
+                        <h4>Apakah ada sertifikat keaslian?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Setiap pembelian perhiasan emas di Toko Mas Sugema disertai dengan sertifikat
+                            keaslian yang mencantumkan berat, kadar emas, dan detail produk lainnya. Sertifikat
+                            ini menjadi jaminan kualitas produk kami.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="200">
+                    <div class="faq-question">
+                        <h4>Bisa pesan custom design?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Tentu! Kami menerima pesanan custom design untuk cincin, kalung, gelang, dan
+                            perhiasan lainnya. Hubungi kami via WhatsApp untuk konsultasi desain dan estimasi
+                            biaya pembuatan.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="250">
+                    <div class="faq-question">
+                        <h4>Bagaimana cara pembayaran?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Kami menerima pembayaran tunai, transfer bank (BCA, Mandiri, BRI, BNI), dan QRIS.
+                            Untuk pembelian dalam jumlah besar, tersedia opsi cicilan tanpa kartu kredit.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-aos="fade-up" data-aos-delay="300">
+                    <div class="faq-question">
+                        <h4>Apakah ada garansi?</h4>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>
+                            Ya, setiap perhiasan yang dibeli di toko kami mendapat garansi tukar jika
+                            ditemukan cacat produksi. Kami juga menyediakan layanan perbaikan dan pembersihan
+                            gratis untuk pembelian di toko kami.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-brand">
+                        <a href="../index.html" class="footer-logo">
+                            <span class="logo-text">Toko Mas</span>
+                            <span class="logo-accent">Sugema</span>
+                        </a>
+                        <p class="footer-description">
+                            Pusat perhiasan emas berkualitas tinggi di Karawang.
+                            Melayani dengan kepercayaan sejak 1990.
+                        </p>
+                        <div class="footer-social">
+                            <a href="#" class="social-link" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="WhatsApp">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="social-link" aria-label="TikTok">
+                                <i class="fab fa-tiktok"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4 class="footer-title">Menu</h4>
+                        <ul>
+                            <li><a href="../index.html">Beranda</a></li>
+                            <li><a href="produk.html">Produk</a></li>
+                            <li><a href="tentang.html">Tentang Kami</a></li>
+                            <li><a href="kontak.html">Kontak</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-links">
+                        <h4 class="footer-title">Kategori</h4>
+                        <ul>
+                            <li><a href="produk.html">Cincin Emas</a></li>
+                            <li><a href="produk.html">Kalung Emas</a></li>
+                            <li><a href="produk.html">Gelang Emas</a></li>
+                            <li><a href="produk.html">Anting Emas</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-contact">
+                        <h4 class="footer-title">Kontak</h4>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>Jl. Tuparev No. 123, Karawang</span>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <span>(0267) 123-4567</span>
+                            </li>
+                            <li>
+                                <i class="fab fa-whatsapp"></i>
+                                <span>+62 812-3456-7890</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 Toko Mas Sugema. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/6281234567890" class="whatsapp-float" target="_blank" aria-label="Chat via WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Chat dengan Kami</span>
+    </a>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js"></script>
+    <script src="../js/animations.js"></script>
+
+    <script>
+        // FAQ Accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+
+                question.addEventListener('click', function() {
+                    // Close other items
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item) {
+                            otherItem.classList.remove('active');
+                        }
+                    });
+
+                    // Toggle current item
+                    item.classList.toggle('active');
+                });
+            });
+
+            // Contact Form (sends to WhatsApp)
+            const contactForm = document.getElementById('contact-form');
+            const successMessage = document.getElementById('success-message');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+
+                // Get form values
+                const name = document.getElementById('name').value;
+                const phone = document.getElementById('phone').value;
+                const email = document.getElementById('email').value;
+                const subject = document.getElementById('subject').value;
+                const message = document.getElementById('message').value;
+
+                // Create WhatsApp message
+                let waMessage = `*Pesan dari Website*%0A%0A`;
+                waMessage += `*Nama:* ${name}%0A`;
+                waMessage += `*WhatsApp:* ${phone}%0A`;
+                if (email) {
+                    waMessage += `*Email:* ${email}%0A`;
+                }
+                waMessage += `*Subjek:* ${subject}%0A%0A`;
+                waMessage += `*Pesan:*%0A${message}`;
+
+                // Open WhatsApp
+                window.open(`https://wa.me/6281234567890?text=${waMessage}`, '_blank');
+
+                // Show success message
+                successMessage.classList.add('show');
+
+                // Reset form
+                contactForm.reset();
+
+                // Hide success message after 5 seconds
+                setTimeout(() => {
+                    successMessage.classList.remove('show');
+                }, 5000);
+            });
+        });
+    </script>
+</body>
+</html>

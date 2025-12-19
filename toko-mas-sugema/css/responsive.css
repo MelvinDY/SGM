@@ -1,0 +1,653 @@
+/* ============================================
+   TOKO MAS SUGEMA - Responsive Stylesheet
+   Mobile First Approach
+   ============================================ */
+
+/* ============================================
+   MOBILE DEVICES (max-width: 575px)
+   ============================================ */
+@media (max-width: 575px) {
+    :root {
+        --container-padding: 1rem;
+    }
+
+    /* Typography */
+    h1 { font-size: var(--text-3xl); }
+    h2 { font-size: var(--text-2xl); }
+    h3 { font-size: var(--text-xl); }
+
+    /* Navigation */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 80%;
+        max-width: 300px;
+        height: 100vh;
+        background-color: var(--color-rich-black);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px var(--space-xl) var(--space-xl);
+        gap: 0;
+        transition: right var(--transition-base);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link {
+        display: block;
+        padding: var(--space-lg) 0;
+        font-size: var(--text-base);
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-cta {
+        margin-top: var(--space-lg);
+        border-bottom: none;
+    }
+
+    .nav-btn {
+        width: 100%;
+        justify-content: center;
+        padding: var(--space-md) var(--space-xl);
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: clamp(2rem, 8vw, 2.5rem);
+    }
+
+    .hero-subtitle {
+        font-size: var(--text-sm);
+        letter-spacing: 2px;
+    }
+
+    .hero-description {
+        font-size: var(--text-base);
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: var(--space-md);
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+
+    /* About Preview */
+    .about-preview {
+        padding: var(--space-3xl) 0;
+    }
+
+    .about-preview-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .about-preview-image {
+        order: -1;
+    }
+
+    .image-frame {
+        padding: var(--space-md);
+    }
+
+    .frame-decoration {
+        width: 60px;
+        height: 60px;
+    }
+
+    .about-preview-content .section-subtitle,
+    .about-preview-content .section-title {
+        text-align: center;
+    }
+
+    .about-preview-content .btn {
+        display: block;
+        text-align: center;
+    }
+
+    /* Products Grid */
+    .featured-products {
+        padding: var(--space-3xl) 0;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-md);
+    }
+
+    .product-info {
+        padding: var(--space-md);
+    }
+
+    .product-name {
+        font-size: var(--text-base);
+    }
+
+    .product-weight {
+        font-size: var(--text-xs);
+    }
+
+    /* Features Grid */
+    .why-choose-us {
+        padding: var(--space-3xl) 0;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+
+    .feature-card {
+        padding: var(--space-xl);
+    }
+
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .feature-icon i {
+        font-size: var(--text-xl);
+    }
+
+    /* Testimonials */
+    .testimonials {
+        padding: var(--space-3xl) 0;
+    }
+
+    .testimonial-card {
+        padding: 0 var(--space-sm);
+    }
+
+    .testimonial-content {
+        padding: var(--space-lg);
+    }
+
+    .testimonial-text {
+        font-size: var(--text-base);
+        padding-left: var(--space-lg);
+    }
+
+    .testimonial-rating {
+        padding-left: var(--space-lg);
+    }
+
+    .quote-icon {
+        font-size: var(--text-2xl);
+        left: var(--space-lg);
+    }
+
+    /* Location Grid */
+    .location-contact {
+        padding: var(--space-3xl) 0;
+    }
+
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    .map-container iframe {
+        height: 300px;
+    }
+
+    .contact-info-card {
+        padding: var(--space-lg);
+    }
+
+    .contact-item {
+        gap: var(--space-md);
+    }
+
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+
+    .footer-contact ul li {
+        justify-content: center;
+    }
+
+    /* Floating Buttons */
+    .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+    }
+
+    .whatsapp-float i {
+        font-size: 24px;
+    }
+
+    .whatsapp-tooltip {
+        display: none;
+    }
+
+    .back-to-top {
+        width: 40px;
+        height: 40px;
+        bottom: 80px;
+        right: 20px;
+    }
+
+    /* Section Headers */
+    .section-title {
+        font-size: var(--text-2xl);
+    }
+
+    .section-subtitle {
+        font-size: var(--text-sm);
+        letter-spacing: 2px;
+    }
+
+    .section-description {
+        font-size: var(--text-base);
+    }
+}
+
+/* ============================================
+   SMALL DEVICES (min-width: 576px)
+   ============================================ */
+@media (min-width: 576px) and (max-width: 767px) {
+    /* Navigation */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 60%;
+        max-width: 320px;
+        height: 100vh;
+        background-color: var(--color-rich-black);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px var(--space-xl) var(--space-xl);
+        gap: 0;
+        transition: right var(--transition-base);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link {
+        display: block;
+        padding: var(--space-lg) 0;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-cta {
+        margin-top: var(--space-lg);
+        border-bottom: none;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: clamp(2.5rem, 6vw, 3rem);
+    }
+
+    /* About Preview */
+    .about-preview-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-2xl);
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* Location Grid */
+    .location-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-xl);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .footer-social {
+        justify-content: center;
+    }
+}
+
+/* ============================================
+   TABLETS (min-width: 768px)
+   ============================================ */
+@media (min-width: 768px) and (max-width: 991px) {
+    /* Navigation */
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 50%;
+        max-width: 350px;
+        height: 100vh;
+        background-color: var(--color-rich-black);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 100px var(--space-xl) var(--space-xl);
+        gap: 0;
+        transition: right var(--transition-base);
+        box-shadow: -5px 0 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-menu.active {
+        right: 0;
+    }
+
+    .nav-item {
+        width: 100%;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-link {
+        display: block;
+        padding: var(--space-lg) 0;
+    }
+
+    .nav-link::after {
+        display: none;
+    }
+
+    .nav-cta {
+        margin-top: var(--space-lg);
+        border-bottom: none;
+    }
+
+    /* About Preview */
+    .about-preview-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-2xl);
+    }
+
+    .frame-decoration {
+        width: 80px;
+        height: 80px;
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* Location Grid */
+    .location-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-xl);
+    }
+
+    .map-container iframe {
+        height: 100%;
+        min-height: 350px;
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-xl);
+    }
+
+    .footer-brand {
+        grid-column: span 2;
+    }
+}
+
+/* ============================================
+   DESKTOPS (min-width: 992px)
+   ============================================ */
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-lg);
+    }
+
+    .feature-card {
+        padding: var(--space-xl);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+        gap: var(--space-xl);
+    }
+}
+
+/* ============================================
+   LARGE SCREENS (min-width: 1200px)
+   ============================================ */
+@media (min-width: 1200px) {
+    :root {
+        --container-max: 1200px;
+    }
+
+    /* Hero */
+    .hero-title {
+        font-size: var(--text-6xl);
+    }
+
+    /* Products Grid */
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+    }
+
+    /* Features Grid */
+    .features-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-xl);
+    }
+
+    /* Footer */
+    .footer-grid {
+        grid-template-columns: 2fr 1fr 1fr 1.5fr;
+        gap: var(--space-2xl);
+    }
+}
+
+/* ============================================
+   EXTRA LARGE SCREENS (min-width: 1400px)
+   ============================================ */
+@media (min-width: 1400px) {
+    :root {
+        --container-max: 1320px;
+    }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    .navbar,
+    .whatsapp-float,
+    .back-to-top,
+    .hero-scroll {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: var(--space-2xl) 0;
+    }
+
+    .hero-bg,
+    .hero-overlay {
+        display: none;
+    }
+
+    .hero-content {
+        color: black;
+    }
+
+    .hero-title,
+    .hero-description {
+        color: black;
+    }
+
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+/* ============================================
+   LANDSCAPE ORIENTATION FIXES
+   ============================================ */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        min-height: auto;
+        padding: 100px 0 var(--space-2xl);
+    }
+
+    .hero-title {
+        font-size: var(--text-3xl);
+    }
+
+    .hero-description {
+        margin-bottom: var(--space-lg);
+    }
+
+    .hero-scroll {
+        display: none;
+    }
+}
+
+/* ============================================
+   HIGH DPI SCREENS
+   ============================================ */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Ensure crisp rendering on retina displays */
+    .image-placeholder {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* ============================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ============================================ */
+@media (hover: none) and (pointer: coarse) {
+    /* Larger touch targets */
+    .btn {
+        min-height: 48px;
+        padding: var(--space-md) var(--space-xl);
+    }
+
+    .nav-link {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Disable hover effects */
+    .product-card:hover {
+        transform: none;
+    }
+
+    .product-overlay {
+        opacity: 1;
+        background-color: rgba(26, 26, 26, 0.5);
+    }
+
+    .product-view {
+        transform: scale(1);
+    }
+
+    .feature-card:hover {
+        transform: none;
+    }
+}
+
+/* ============================================
+   DARK MODE SUPPORT (Optional)
+   ============================================ */
+@media (prefers-color-scheme: dark) {
+    /*
+     * Uncomment to enable automatic dark mode
+     * The site is already dark-themed by default
+     */
+}
