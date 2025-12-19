@@ -1,0 +1,131 @@
+import { Link } from 'react-router-dom'
+import { Facebook, Instagram, MessageCircle } from 'lucide-react'
+
+const menuLinks = [
+  { href: '/', label: 'Beranda' },
+  { href: '/produk', label: 'Produk' },
+  { href: '/tentang', label: 'Tentang Kami' },
+  { href: '/kontak', label: 'Kontak' },
+]
+
+const categoryLinks = [
+  { href: '/produk', label: 'Cincin Emas' },
+  { href: '/produk', label: 'Kalung Emas' },
+  { href: '/produk', label: 'Gelang Emas' },
+  { href: '/produk', label: 'Anting Emas' },
+]
+
+export function Footer() {
+  return (
+    <footer className="bg-black border-t border-zinc-900">
+      <div className="container py-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+          {/* Brand */}
+          <div>
+            <Link to="/" className="block mb-6">
+              <span className="block font-display text-lg tracking-wide text-white">
+                Toko Mas
+              </span>
+              <span className="block font-accent text-xl italic text-gold">
+                Sugema
+              </span>
+            </Link>
+            <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+              Pusat perhiasan emas berkualitas tinggi di Karawang.
+              Melayani dengan kepercayaan sejak 1990.
+            </p>
+            <div className="flex gap-3">
+              <a
+                href="#"
+                className="w-10 h-10 border border-zinc-800 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+              >
+                <Facebook size={16} />
+              </a>
+              <a
+                href="#"
+                className="w-10 h-10 border border-zinc-800 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+              >
+                <Instagram size={16} />
+              </a>
+              <a
+                href="https://wa.me/6281234567890"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 border border-zinc-800 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+              >
+                <MessageCircle size={16} />
+              </a>
+            </div>
+          </div>
+
+          {/* Menu */}
+          <div>
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white mb-6">
+              Menu
+            </h4>
+            <ul className="space-y-3">
+              {menuLinks.map((link) => (
+                <li key={link.label}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-zinc-500 hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Category */}
+          <div>
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white mb-6">
+              Kategori
+            </h4>
+            <ul className="space-y-3">
+              {categoryLinks.map((link, index) => (
+                <li key={index}>
+                  <Link
+                    to={link.href}
+                    className="text-sm text-zinc-500 hover:text-gold transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white mb-6">
+              Kontak
+            </h4>
+            <ul className="space-y-3 text-sm text-zinc-500">
+              <li className="flex gap-3">
+                <span className="text-gold">📍</span>
+                <span>Jl. Tuparev No. 123, Karawang</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gold">📞</span>
+                <span>(0267) 123-4567</span>
+              </li>
+              <li className="flex gap-3">
+                <span className="text-gold">💬</span>
+                <span>+62 812-3456-7890</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div className="border-t border-zinc-900 py-6">
+        <div className="container text-center">
+          <p className="text-xs text-zinc-600 tracking-wider">
+            &copy; 2024 Toko Mas Sugema. Hak Cipta Dilindungi.
+          </p>
+        </div>
+      </div>
+    </footer>
+  )
+}

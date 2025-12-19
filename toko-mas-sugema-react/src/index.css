@@ -1,0 +1,127 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+
+@theme {
+  --color-gold: #C9A962;
+  --color-gold-light: #D4B978;
+  --color-gold-dark: #A68B4B;
+
+  --font-family-display: "Playfair Display", Georgia, serif;
+  --font-family-body: "Inter", system-ui, sans-serif;
+  --font-family-accent: "Cormorant Garamond", Georgia, serif;
+
+  --color-background: oklch(0% 0 0);
+  --color-foreground: oklch(100% 0 0);
+  --color-card: oklch(4% 0 0);
+  --color-card-foreground: oklch(100% 0 0);
+  --color-popover: oklch(4% 0 0);
+  --color-popover-foreground: oklch(100% 0 0);
+  --color-primary: #C9A962;
+  --color-primary-foreground: oklch(0% 0 0);
+  --color-secondary: oklch(10% 0 0);
+  --color-secondary-foreground: oklch(100% 0 0);
+  --color-muted: oklch(15% 0 0);
+  --color-muted-foreground: oklch(60% 0 0);
+  --color-accent: #C9A962;
+  --color-accent-foreground: oklch(0% 0 0);
+  --color-destructive: oklch(30.6% 0.125 0);
+  --color-destructive-foreground: oklch(100% 0 0);
+  --color-border: oklch(15% 0 0);
+  --color-input: oklch(15% 0 0);
+  --color-ring: #C9A962;
+  --radius: 0px;
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-family-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-family-display);
+    font-weight: 400;
+    letter-spacing: -0.025em;
+  }
+
+  ::selection {
+    background-color: var(--color-gold);
+    color: black;
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  @media (min-width: 1024px) {
+    .container {
+      padding-left: 2rem;
+      padding-right: 2rem;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: var(--font-family-display);
+  }
+
+  .font-body {
+    font-family: var(--font-family-body);
+  }
+
+  .font-accent {
+    font-family: var(--font-family-accent);
+  }
+
+  .text-gold {
+    color: var(--color-gold);
+  }
+
+  .bg-gold {
+    background-color: var(--color-gold);
+  }
+
+  .border-gold {
+    border-color: var(--color-gold);
+  }
+
+  .hover\:text-gold:hover {
+    color: var(--color-gold);
+  }
+
+  .hover\:bg-gold:hover {
+    background-color: var(--color-gold);
+  }
+
+  .hover\:border-gold:hover {
+    border-color: var(--color-gold);
+  }
+
+  .fill-gold {
+    fill: var(--color-gold);
+  }
+}
