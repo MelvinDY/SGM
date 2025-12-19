@@ -3,6 +3,7 @@ import { Layout } from '@/components/layout/Layout'
 import { ProtectedRoute } from '@/components/ProtectedRoute'
 import { HomePage } from '@/pages/HomePage'
 import { ProductsPage } from '@/pages/ProductsPage'
+import { GoldPricePage } from '@/pages/GoldPricePage'
 import { AboutPage } from '@/pages/AboutPage'
 import { ContactPage } from '@/pages/ContactPage'
 
@@ -21,6 +22,7 @@ function App() {
         {/* Public routes */}
         <Route element={<Layout><HomePage /></Layout>} path="/" />
         <Route element={<Layout><ProductsPage /></Layout>} path="/produk" />
+        <Route element={<Layout><GoldPricePage /></Layout>} path="/harga-emas" />
         <Route element={<Layout><AboutPage /></Layout>} path="/tentang" />
         <Route element={<Layout><ContactPage /></Layout>} path="/kontak" />
 

@@ -69,6 +69,7 @@ export function Footer() {
               {[
                 { href: '/', label: 'Beranda' },
                 { href: '/produk', label: 'Produk' },
+                { href: '/harga-emas', label: 'Harga Emas' },
                 { href: '/tentang', label: 'Tentang Kami' },
                 { href: '/kontak', label: 'Kontak' },
               ].map((link) => (
