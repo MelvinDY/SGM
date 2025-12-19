@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Facebook, Instagram, MessageCircle } from 'lucide-react'
+import { Facebook, Instagram, MessageCircle, Diamond } from 'lucide-react'
 
 const menuLinks = [
   { href: '/', label: 'Beranda' },
@@ -17,33 +17,36 @@ const categoryLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-black border-t border-zinc-900">
+    <footer className="bg-cream-dark border-t border-gold/20">
+      {/* Decorative Top Border */}
+      <div className="h-1 bg-gradient-to-r from-transparent via-gold to-transparent" />
+
       <div className="container py-20">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Brand */}
           <div>
             <Link to="/" className="block mb-6">
-              <span className="block font-display text-lg tracking-wide text-white">
+              <span className="block font-display text-lg tracking-wide text-charcoal">
                 Toko Mas
               </span>
               <span className="block font-accent text-xl italic text-gold">
                 Sugema
               </span>
             </Link>
-            <p className="text-sm text-zinc-500 leading-relaxed mb-6">
+            <p className="text-sm text-warm-gray leading-relaxed mb-6">
               Pusat perhiasan emas berkualitas tinggi di Karawang.
               Melayani dengan kepercayaan sejak 1990.
             </p>
             <div className="flex gap-3">
               <a
                 href="#"
-                className="w-10 h-10 border border-zinc-800 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+                className="w-10 h-10 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
               >
                 <Facebook size={16} />
               </a>
               <a
                 href="#"
-                className="w-10 h-10 border border-zinc-800 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+                className="w-10 h-10 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
               >
                 <Instagram size={16} />
               </a>
@@ -51,7 +54,7 @@ export function Footer() {
                 href="https://wa.me/6281234567890"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-10 h-10 border border-zinc-800 flex items-center justify-center text-white hover:bg-gold hover:border-gold hover:text-black transition-all"
+                className="w-10 h-10 border border-gold/30 flex items-center justify-center text-gold hover:bg-gold hover:text-white transition-all"
               >
                 <MessageCircle size={16} />
               </a>
@@ -60,7 +63,7 @@ export function Footer() {
 
           {/* Menu */}
           <div>
-            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white mb-6">
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-charcoal mb-6">
               Menu
             </h4>
             <ul className="space-y-3">
@@ -68,7 +71,7 @@ export function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.href}
-                    className="text-sm text-zinc-500 hover:text-gold transition-colors"
+                    className="text-sm text-warm-gray hover:text-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -79,7 +82,7 @@ export function Footer() {
 
           {/* Category */}
           <div>
-            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white mb-6">
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-charcoal mb-6">
               Kategori
             </h4>
             <ul className="space-y-3">
@@ -87,7 +90,7 @@ export function Footer() {
                 <li key={index}>
                   <Link
                     to={link.href}
-                    className="text-sm text-zinc-500 hover:text-gold transition-colors"
+                    className="text-sm text-warm-gray hover:text-gold transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -98,10 +101,10 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-white mb-6">
+            <h4 className="text-xs font-medium uppercase tracking-[0.2em] text-charcoal mb-6">
               Kontak
             </h4>
-            <ul className="space-y-3 text-sm text-zinc-500">
+            <ul className="space-y-3 text-sm text-warm-gray">
               <li className="flex gap-3">
                 <span className="text-gold">📍</span>
                 <span>Jl. Tuparev No. 123, Karawang</span>
@@ -119,11 +122,14 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-zinc-900 py-6">
-        <div className="container text-center">
-          <p className="text-xs text-zinc-600 tracking-wider">
+      <div className="border-t border-gold/20 py-6">
+        <div className="container flex flex-col md:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-warm-gray tracking-wider">
             &copy; 2024 Toko Mas Sugema. Hak Cipta Dilindungi.
           </p>
+          <div className="flex items-center gap-2 text-gold">
+            <Diamond className="w-4 h-4" />
+          </div>
         </div>
       </div>
     </footer>

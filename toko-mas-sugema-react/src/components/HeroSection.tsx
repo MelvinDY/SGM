@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { ArrowRight, MessageCircle } from 'lucide-react'
+import { ArrowRight, MessageCircle, Diamond } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export function HeroSection() {
@@ -64,44 +64,49 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
-      {/* Background Image with Overlay */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-cream">
+      {/* Background Image with Light Overlay */}
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: 'url(https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=1920&q=80)',
         }}
       >
-        <div className="absolute inset-0 bg-black/80" />
+        <div className="absolute inset-0 bg-cream/90" />
       </div>
 
-      {/* Subtle Background Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(201,169,98,0.05)_0%,transparent_70%)] pointer-events-none z-0" />
+      {/* Subtle Pattern Overlay */}
+      <div
+        className="absolute inset-0 opacity-[0.03] pointer-events-none"
+        style={{
+          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23B8860B' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+        }}
+      />
 
       {/* Corner Ornaments */}
       <motion.div
         variants={cornerVariants}
         initial="hidden"
         animate="visible"
-        className="absolute top-8 left-8 w-16 h-16 border-t border-l border-gold/30"
+        className="absolute top-8 left-8 w-20 h-20 border-t-2 border-l-2 border-gold/40"
       />
       <motion.div
         variants={cornerVariants}
         initial="hidden"
         animate="visible"
-        className="absolute top-8 right-8 w-16 h-16 border-t border-r border-gold/30"
+        className="absolute top-8 right-8 w-20 h-20 border-t-2 border-r-2 border-gold/40"
       />
       <motion.div
         variants={cornerVariants}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-8 left-8 w-16 h-16 border-b border-l border-gold/30"
+        className="absolute bottom-8 left-8 w-20 h-20 border-b-2 border-l-2 border-gold/40"
       />
       <motion.div
         variants={cornerVariants}
         initial="hidden"
         animate="visible"
-        className="absolute bottom-8 right-8 w-16 h-16 border-b border-r border-gold/30"
+        className="absolute bottom-8 right-8 w-20 h-20 border-b-2 border-r-2 border-gold/40"
       />
 
       {/* Main Content */}
@@ -119,16 +124,18 @@ export function HeroSection() {
           Est. 1990 — Karawang
         </motion.p>
 
-        {/* Decorative Line */}
+        {/* Decorative Diamond */}
         <motion.div
           variants={itemVariants}
-          className="w-px h-12 bg-gradient-to-b from-transparent via-gold to-transparent mx-auto mb-8"
-        />
+          className="flex justify-center mb-8"
+        >
+          <Diamond className="w-6 h-6 text-gold" />
+        </motion.div>
 
         {/* Main Heading */}
         <motion.h1
           variants={itemVariants}
-          className="font-display text-5xl md:text-7xl lg:text-8xl text-white mb-6 leading-tight"
+          className="font-display text-5xl md:text-7xl lg:text-8xl text-charcoal mb-6 leading-tight"
         >
           Keindahan dalam
           <motion.span
@@ -142,7 +149,7 @@ export function HeroSection() {
         {/* Subtitle */}
         <motion.p
           variants={itemVariants}
-          className="text-zinc-400 max-w-xl mx-auto mb-12 text-sm md:text-base leading-relaxed font-body"
+          className="text-warm-gray max-w-xl mx-auto mb-12 text-sm md:text-base leading-relaxed font-body"
         >
           Temukan koleksi perhiasan emas eksklusif dengan kualitas terbaik.
           Setiap karya dirancang untuk menemani momen berharga Anda.
@@ -157,10 +164,10 @@ export function HeroSection() {
             <motion.button
               whileHover={{
                 scale: 1.02,
-                boxShadow: '0 10px 40px rgba(201, 169, 98, 0.3)',
+                boxShadow: '0 10px 40px rgba(184, 134, 11, 0.25)',
               }}
               whileTap={{ scale: 0.98 }}
-              className="group relative px-10 py-4 bg-gold text-black overflow-hidden transition-all duration-300 hover:bg-gold-light"
+              className="group relative px-10 py-4 bg-gold text-white overflow-hidden transition-all duration-300 hover:bg-gold-dark"
             >
               <span className="relative z-10 flex items-center justify-center gap-3 font-accent text-lg tracking-widest uppercase font-semibold">
                 Lihat Koleksi
@@ -177,10 +184,10 @@ export function HeroSection() {
             <motion.button
               whileHover={{
                 scale: 1.02,
-                borderColor: '#C9A962',
+                borderColor: '#B8860B',
               }}
               whileTap={{ scale: 0.98 }}
-              className="group relative px-10 py-4 bg-transparent border border-white/30 text-white overflow-hidden transition-all duration-300 hover:border-gold hover:text-gold"
+              className="group relative px-10 py-4 bg-transparent border-2 border-charcoal/20 text-charcoal overflow-hidden transition-all duration-300 hover:border-gold hover:text-gold"
             >
               <span className="relative z-10 flex items-center justify-center gap-3 font-accent text-lg tracking-widest uppercase font-semibold">
                 <MessageCircle className="w-4 h-4" />
@@ -191,7 +198,7 @@ export function HeroSection() {
         </motion.div>
       </motion.div>
 
-      {/* Bottom Line Animation */}
+      {/* Bottom Decorative Line */}
       <motion.div
         variants={lineVariants}
         initial="hidden"
@@ -211,7 +218,7 @@ export function HeroSection() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ repeat: Infinity, duration: 1.5, ease: 'easeInOut' }}
-          className="text-zinc-500 text-xs uppercase tracking-[0.3em]"
+          className="text-warm-gray text-xs uppercase tracking-[0.3em]"
         >
           Scroll
         </motion.div>

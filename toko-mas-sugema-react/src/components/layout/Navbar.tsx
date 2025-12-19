@@ -33,14 +33,14 @@ export function Navbar() {
       className={cn(
         'fixed top-0 left-0 right-0 z-50 transition-all duration-300',
         isScrolled
-          ? 'bg-black/95 backdrop-blur-xl py-4'
+          ? 'bg-cream/95 backdrop-blur-xl py-4 shadow-sm'
           : 'bg-transparent py-6'
       )}
     >
       <div className="container flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="group">
-          <span className="block font-display text-xl tracking-wide text-white">
+          <span className="block font-display text-xl tracking-wide text-charcoal">
             Toko Mas
           </span>
           <span className="block font-accent text-2xl italic text-gold -mt-1">
@@ -58,7 +58,7 @@ export function Navbar() {
                 'text-xs uppercase tracking-[0.2em] transition-colors relative py-2',
                 location.pathname === link.href
                   ? 'text-gold'
-                  : 'text-white hover:text-gold',
+                  : 'text-charcoal hover:text-gold',
                 'after:absolute after:bottom-0 after:left-0 after:h-px after:bg-gold after:transition-all after:duration-300',
                 location.pathname === link.href
                   ? 'after:w-full'
@@ -83,7 +83,7 @@ export function Navbar() {
         {/* Mobile Menu Button */}
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="lg:hidden p-2 text-white"
+          className="lg:hidden p-2 text-charcoal"
           aria-label="Toggle menu"
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -93,7 +93,7 @@ export function Navbar() {
       {/* Mobile Menu */}
       <div
         className={cn(
-          'fixed inset-0 bg-black z-40 lg:hidden transition-transform duration-300',
+          'fixed inset-0 bg-cream z-40 lg:hidden transition-transform duration-300',
           isMobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         )}
       >
@@ -106,7 +106,7 @@ export function Navbar() {
                 'text-sm uppercase tracking-[0.2em] py-4 transition-colors',
                 location.pathname === link.href
                   ? 'text-gold'
-                  : 'text-white hover:text-gold'
+                  : 'text-charcoal hover:text-gold'
               )}
             >
               {link.label}

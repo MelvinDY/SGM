@@ -3,33 +3,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @theme {
-  --color-gold: #C9A962;
-  --color-gold-light: #D4B978;
-  --color-gold-dark: #A68B4B;
+  /* Cream & Gold Classic Theme */
+  --color-gold: #B8860B;
+  --color-gold-light: #D4A84B;
+  --color-gold-dark: #8B6914;
+
+  /* Cream backgrounds */
+  --color-cream: #FAF8F5;
+  --color-cream-dark: #F5F1EB;
+  --color-cream-darker: #EDE8E0;
+
+  /* Text colors */
+  --color-charcoal: #1A1A1A;
+  --color-charcoal-light: #3D3D3D;
+  --color-warm-gray: #6B6B6B;
+  --color-warm-gray-light: #9B9B9B;
+
+  /* Borders */
+  --color-border-light: #E5DFD5;
+  --color-border-gold: #D4C4A8;
 
   --font-family-display: "Playfair Display", Georgia, serif;
   --font-family-body: "Inter", system-ui, sans-serif;
   --font-family-accent: "Cormorant Garamond", Georgia, serif;
 
-  --color-background: oklch(0% 0 0);
-  --color-foreground: oklch(100% 0 0);
-  --color-card: oklch(4% 0 0);
-  --color-card-foreground: oklch(100% 0 0);
-  --color-popover: oklch(4% 0 0);
-  --color-popover-foreground: oklch(100% 0 0);
-  --color-primary: #C9A962;
-  --color-primary-foreground: oklch(0% 0 0);
-  --color-secondary: oklch(10% 0 0);
-  --color-secondary-foreground: oklch(100% 0 0);
-  --color-muted: oklch(15% 0 0);
-  --color-muted-foreground: oklch(60% 0 0);
-  --color-accent: #C9A962;
-  --color-accent-foreground: oklch(0% 0 0);
-  --color-destructive: oklch(30.6% 0.125 0);
-  --color-destructive-foreground: oklch(100% 0 0);
-  --color-border: oklch(15% 0 0);
-  --color-input: oklch(15% 0 0);
-  --color-ring: #C9A962;
+  /* Theme colors for shadcn */
+  --color-background: #FAF8F5;
+  --color-foreground: #1A1A1A;
+  --color-card: #FFFFFF;
+  --color-card-foreground: #1A1A1A;
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #1A1A1A;
+  --color-primary: #B8860B;
+  --color-primary-foreground: #FFFFFF;
+  --color-secondary: #F5F1EB;
+  --color-secondary-foreground: #1A1A1A;
+  --color-muted: #F5F1EB;
+  --color-muted-foreground: #6B6B6B;
+  --color-accent: #B8860B;
+  --color-accent-foreground: #FFFFFF;
+  --color-destructive: #DC2626;
+  --color-destructive-foreground: #FFFFFF;
+  --color-border: #E5DFD5;
+  --color-input: #E5DFD5;
+  --color-ring: #B8860B;
   --radius: 0px;
 }
 
@@ -43,23 +60,24 @@
   }
 
   body {
-    background-color: var(--color-background);
-    color: var(--color-foreground);
+    background-color: var(--color-cream);
+    color: var(--color-charcoal);
     font-family: var(--font-family-body);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: 300;
+    font-weight: 400;
   }
 
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-family-display);
-    font-weight: 400;
-    letter-spacing: -0.025em;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    color: var(--color-charcoal);
   }
 
   ::selection {
     background-color: var(--color-gold);
-    color: black;
+    color: white;
   }
 }
 
@@ -77,6 +95,41 @@
       padding-left: 2rem;
       padding-right: 2rem;
     }
+  }
+
+  /* Decorative gold divider */
+  .divider-gold {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0;
+  }
+
+  .divider-gold::before,
+  .divider-gold::after {
+    content: '';
+    height: 1px;
+    width: 80px;
+    background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  }
+
+  .divider-gold-icon {
+    color: var(--color-gold);
+    font-size: 1.25rem;
+  }
+
+  /* Classic card with shadow */
+  .card-classic {
+    background: white;
+    border: 1px solid var(--color-border-light);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s ease;
+  }
+
+  .card-classic:hover {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-gold);
   }
 }
 
@@ -97,6 +150,7 @@
     font-family: var(--font-family-accent);
   }
 
+  /* Gold colors */
   .text-gold {
     color: var(--color-gold);
   }
@@ -123,5 +177,28 @@
 
   .fill-gold {
     fill: var(--color-gold);
+  }
+
+  /* Cream backgrounds */
+  .bg-cream {
+    background-color: var(--color-cream);
+  }
+
+  .bg-cream-dark {
+    background-color: var(--color-cream-dark);
+  }
+
+  /* Text colors */
+  .text-charcoal {
+    color: var(--color-charcoal);
+  }
+
+  .text-warm-gray {
+    color: var(--color-warm-gray);
+  }
+
+  /* Borders */
+  .border-cream {
+    border-color: var(--color-border-light);
   }
 }

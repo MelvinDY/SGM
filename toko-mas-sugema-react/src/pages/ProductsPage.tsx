@@ -115,16 +115,16 @@ export function ProductsPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-black">
+      <section className="pt-32 pb-16 bg-cream">
         <div className="container">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">
               Koleksi Kami
             </p>
-            <h1 className="font-display text-5xl md:text-6xl text-white mb-6">
+            <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
               Katalog <span className="text-gold italic font-accent">Perhiasan</span>
             </h1>
-            <p className="text-zinc-400 max-w-xl mx-auto">
+            <p className="text-warm-gray max-w-xl mx-auto">
               Jelajahi koleksi lengkap perhiasan emas kami dengan berbagai pilihan desain
               dan kadar emas premium.
             </p>
@@ -133,7 +133,7 @@ export function ProductsPage() {
       </section>
 
       {/* Products Section */}
-      <section className="py-16 bg-zinc-950">
+      <section className="py-16 bg-cream-dark">
         <div className="container">
           {/* Category Filter */}
           <div className="flex flex-wrap justify-center gap-4 mb-12">
@@ -142,10 +142,10 @@ export function ProductsPage() {
                 key={category}
                 onClick={() => setActiveCategory(category)}
                 className={cn(
-                  'px-6 py-3 text-xs uppercase tracking-[0.2em] border transition-all',
+                  'px-6 py-3 text-xs uppercase tracking-[0.2em] border-2 transition-all',
                   activeCategory === category
-                    ? 'bg-gold border-gold text-black'
-                    : 'border-zinc-800 text-white hover:border-gold hover:text-gold'
+                    ? 'bg-gold border-gold text-white'
+                    : 'border-gold/30 text-charcoal hover:border-gold hover:text-gold'
                 )}
               >
                 {category}
@@ -156,14 +156,14 @@ export function ProductsPage() {
           {/* Products Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
             {filteredProducts.map((product) => (
-              <Card key={product.id} className="group bg-black border-zinc-800 overflow-hidden">
+              <Card key={product.id} className="group card-classic overflow-hidden">
                 <div className="aspect-square overflow-hidden relative">
                   <img
                     src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                  <div className="absolute inset-0 bg-charcoal/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                     <a
                       href={`https://wa.me/6281234567890?text=Halo, saya tertarik dengan ${product.name}`}
                       target="_blank"
@@ -180,12 +180,12 @@ export function ProductsPage() {
                   <p className="text-xs text-gold uppercase tracking-wider mb-2">
                     {product.category}
                   </p>
-                  <h3 className="font-display text-lg text-white mb-3">
+                  <h3 className="font-display text-lg text-charcoal mb-3">
                     {product.name}
                   </h3>
-                  <div className="flex justify-between text-sm text-zinc-500">
+                  <div className="flex justify-between text-sm text-warm-gray">
                     <span>{product.weight}</span>
-                    <span className="text-gold">{product.karat}</span>
+                    <span className="text-gold font-medium">{product.karat}</span>
                   </div>
                 </CardContent>
               </Card>
@@ -193,11 +193,11 @@ export function ProductsPage() {
           </div>
 
           {/* CTA */}
-          <div className="mt-16 text-center p-12 border border-zinc-800 bg-black">
-            <h3 className="font-display text-2xl text-white mb-4">
+          <div className="mt-16 text-center p-12 border-2 border-gold/30 bg-cream">
+            <h3 className="font-display text-2xl text-charcoal mb-4">
               Tidak menemukan yang Anda cari?
             </h3>
-            <p className="text-zinc-400 mb-6 max-w-lg mx-auto">
+            <p className="text-warm-gray mb-6 max-w-lg mx-auto">
               Hubungi kami untuk pemesanan khusus atau konsultasi mengenai perhiasan impian Anda.
             </p>
             <a

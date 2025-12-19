@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { HeroSection } from '@/components/HeroSection'
-import { MessageCircle, Shield, Award, Gem, Star, MapPin, Phone, Clock } from 'lucide-react'
+import { MessageCircle, Shield, Award, Gem, Star, MapPin, Phone, Clock, Diamond } from 'lucide-react'
 
 const featuredProducts = [
   {
@@ -98,8 +98,13 @@ export function HomePage() {
       {/* Hero Section */}
       <HeroSection />
 
+      {/* Decorative Divider */}
+      <div className="divider-gold">
+        <Diamond className="divider-gold-icon" />
+      </div>
+
       {/* About Preview Section */}
-      <section className="py-24 bg-black overflow-hidden">
+      <section className="py-24 bg-cream overflow-hidden">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -116,21 +121,21 @@ export function HomePage() {
               </motion.p>
               <motion.h2
                 variants={fadeInUp}
-                className="font-display text-4xl md:text-5xl text-white mb-6"
+                className="font-display text-4xl md:text-5xl text-charcoal mb-6"
               >
                 Warisan Kepercayaan
                 <span className="block text-gold italic font-accent">Sejak 1990</span>
               </motion.h2>
               <motion.p
                 variants={fadeInUp}
-                className="text-zinc-400 leading-relaxed mb-6"
+                className="text-warm-gray leading-relaxed mb-6"
               >
                 Toko Mas Sugema telah melayani masyarakat Karawang selama lebih dari tiga dekade.
                 Kami berkomitmen menyediakan perhiasan emas dengan kualitas terbaik dan keaslian terjamin.
               </motion.p>
               <motion.p
                 variants={fadeInUp}
-                className="text-zinc-500 text-sm leading-relaxed mb-8"
+                className="text-warm-gray text-sm leading-relaxed mb-8"
               >
                 Dengan pengalaman turun-temurun dalam industri perhiasan, kami memahami bahwa
                 setiap perhiasan memiliki makna tersendiri bagi pemiliknya. Itulah mengapa kami
@@ -152,7 +157,7 @@ export function HomePage() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <div className="aspect-[4/5] overflow-hidden">
+              <div className="aspect-[4/5] overflow-hidden shadow-xl">
                 <img
                   src="https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?w=800&q=80"
                   alt="Toko Mas Sugema"
@@ -164,10 +169,10 @@ export function HomePage() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: 0.3 }}
-                className="absolute -bottom-6 -left-6 bg-gold p-8"
+                className="absolute -bottom-6 -left-6 bg-gold p-8 shadow-lg"
               >
-                <p className="font-display text-4xl text-black">30+</p>
-                <p className="text-xs uppercase tracking-wider text-black/70">Tahun Pengalaman</p>
+                <p className="font-display text-4xl text-white">30+</p>
+                <p className="text-xs uppercase tracking-wider text-white/80">Tahun Pengalaman</p>
               </motion.div>
             </motion.div>
           </div>
@@ -175,7 +180,7 @@ export function HomePage() {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-24 bg-zinc-950 overflow-hidden">
+      <section className="py-24 bg-cream-dark overflow-hidden">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -192,7 +197,7 @@ export function HomePage() {
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="font-display text-4xl md:text-5xl text-white"
+              className="font-display text-4xl md:text-5xl text-charcoal"
             >
               Perhiasan <span className="text-gold italic font-accent">Pilihan</span>
             </motion.h2>
@@ -207,7 +212,7 @@ export function HomePage() {
           >
             {featuredProducts.map((product) => (
               <motion.div key={product.id} variants={fadeInUp}>
-                <Card className="group bg-black border-zinc-800 overflow-hidden">
+                <Card className="group card-classic overflow-hidden">
                   <div className="aspect-square overflow-hidden">
                     <motion.img
                       whileHover={{ scale: 1.1 }}
@@ -221,10 +226,10 @@ export function HomePage() {
                     <p className="text-xs text-gold uppercase tracking-wider mb-2">
                       {product.category}
                     </p>
-                    <h3 className="font-display text-lg text-white mb-2">
+                    <h3 className="font-display text-lg text-charcoal mb-2">
                       {product.name}
                     </h3>
-                    <p className="text-sm text-zinc-500">
+                    <p className="text-sm text-warm-gray">
                       {product.weight}
                     </p>
                   </CardContent>
@@ -250,7 +255,7 @@ export function HomePage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24 bg-black border-y border-zinc-900 overflow-hidden">
+      <section className="py-24 bg-cream border-y border-gold/20 overflow-hidden">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -266,15 +271,15 @@ export function HomePage() {
                 className="text-center"
               >
                 <motion.div
-                  whileHover={{ scale: 1.05, borderColor: '#C9A962' }}
-                  className="w-16 h-16 mx-auto mb-6 border border-zinc-800 flex items-center justify-center transition-colors"
+                  whileHover={{ scale: 1.05, borderColor: '#B8860B' }}
+                  className="w-16 h-16 mx-auto mb-6 border-2 border-gold/30 flex items-center justify-center transition-colors"
                 >
                   <feature.icon className="w-6 h-6 text-gold" />
                 </motion.div>
-                <h3 className="font-display text-xl text-white mb-3">
+                <h3 className="font-display text-xl text-charcoal mb-3">
                   {feature.title}
                 </h3>
-                <p className="text-sm text-zinc-500">
+                <p className="text-sm text-warm-gray">
                   {feature.description}
                 </p>
               </motion.div>
@@ -284,7 +289,7 @@ export function HomePage() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-zinc-950 overflow-hidden">
+      <section className="py-24 bg-cream-dark overflow-hidden">
         <div className="container">
           <motion.div
             initial="hidden"
@@ -301,7 +306,7 @@ export function HomePage() {
             </motion.p>
             <motion.h2
               variants={fadeInUp}
-              className="font-display text-4xl md:text-5xl text-white"
+              className="font-display text-4xl md:text-5xl text-charcoal"
             >
               Apa Kata <span className="text-gold italic font-accent">Pelanggan</span>
             </motion.h2>
@@ -316,18 +321,18 @@ export function HomePage() {
           >
             {testimonials.map((testimonial, index) => (
               <motion.div key={index} variants={fadeInUp}>
-                <Card className="bg-black border-zinc-800 p-8 h-full">
+                <Card className="card-classic p-8 h-full">
                   <div className="flex gap-1 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-4 h-4 text-gold fill-gold" />
                     ))}
                   </div>
-                  <p className="text-zinc-400 text-sm leading-relaxed mb-6 italic">
+                  <p className="text-warm-gray text-sm leading-relaxed mb-6 italic">
                     "{testimonial.content}"
                   </p>
                   <div>
-                    <p className="font-display text-white">{testimonial.name}</p>
-                    <p className="text-xs text-zinc-500">{testimonial.role}</p>
+                    <p className="font-display text-charcoal">{testimonial.name}</p>
+                    <p className="text-xs text-warm-gray">{testimonial.role}</p>
                   </div>
                 </Card>
               </motion.div>
@@ -337,7 +342,7 @@ export function HomePage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-black overflow-hidden">
+      <section className="py-24 bg-cream overflow-hidden">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16">
             <motion.div
@@ -354,19 +359,19 @@ export function HomePage() {
               </motion.p>
               <motion.h2
                 variants={fadeInUp}
-                className="font-display text-4xl md:text-5xl text-white mb-8"
+                className="font-display text-4xl md:text-5xl text-charcoal mb-8"
               >
                 Lokasi <span className="text-gold italic font-accent">Toko</span>
               </motion.h2>
 
               <motion.div variants={staggerContainer} className="space-y-6">
                 <motion.div variants={fadeInUp} className="flex gap-4">
-                  <div className="w-12 h-12 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">Alamat</h4>
-                    <p className="text-sm text-zinc-500">
+                    <h4 className="text-charcoal font-medium mb-1">Alamat</h4>
+                    <p className="text-sm text-warm-gray">
                       Jl. Tuparev No. 123, Karawang Barat,<br />
                       Kabupaten Karawang, Jawa Barat 41311
                     </p>
@@ -374,12 +379,12 @@ export function HomePage() {
                 </motion.div>
 
                 <motion.div variants={fadeInUp} className="flex gap-4">
-                  <div className="w-12 h-12 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">Telepon</h4>
-                    <p className="text-sm text-zinc-500">
+                    <h4 className="text-charcoal font-medium mb-1">Telepon</h4>
+                    <p className="text-sm text-warm-gray">
                       (0267) 123-4567<br />
                       +62 812-3456-7890
                     </p>
@@ -387,12 +392,12 @@ export function HomePage() {
                 </motion.div>
 
                 <motion.div variants={fadeInUp} className="flex gap-4">
-                  <div className="w-12 h-12 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-12 h-12 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-1">Jam Operasional</h4>
-                    <p className="text-sm text-zinc-500">
+                    <h4 className="text-charcoal font-medium mb-1">Jam Operasional</h4>
+                    <p className="text-sm text-warm-gray">
                       Senin - Sabtu: 09:00 - 21:00<br />
                       Minggu: 10:00 - 18:00
                     </p>
@@ -425,7 +430,7 @@ export function HomePage() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="aspect-square lg:aspect-auto bg-zinc-900"
+              className="aspect-square lg:aspect-auto bg-cream-dark shadow-lg"
             >
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.2!2d107.3!3d-6.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTgnMDAuMCJTIDEwN8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1234567890"

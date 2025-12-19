@@ -26,16 +26,16 @@ export function ContactPage() {
   return (
     <>
       {/* Hero Section */}
-      <section className="pt-32 pb-16 bg-black">
+      <section className="pt-32 pb-16 bg-cream">
         <div className="container">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">
               Hubungi Kami
             </p>
-            <h1 className="font-display text-5xl md:text-6xl text-white mb-6">
+            <h1 className="font-display text-5xl md:text-6xl text-charcoal mb-6">
               Mari <span className="text-gold italic font-accent">Berkomunikasi</span>
             </h1>
-            <p className="text-zinc-400 max-w-xl mx-auto">
+            <p className="text-warm-gray max-w-xl mx-auto">
               Kami siap membantu Anda menemukan perhiasan impian. Hubungi kami
               untuk konsultasi atau kunjungi toko kami langsung.
             </p>
@@ -44,18 +44,18 @@ export function ContactPage() {
       </section>
 
       {/* Contact Section */}
-      <section className="py-24 bg-zinc-950">
+      <section className="py-24 bg-cream-dark">
         <div className="container">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Form */}
             <div>
-              <h2 className="font-display text-3xl text-white mb-8">
+              <h2 className="font-display text-3xl text-charcoal mb-8">
                 Kirim <span className="text-gold italic font-accent">Pesan</span>
               </h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm text-zinc-400 mb-2">
+                  <label htmlFor="name" className="block text-sm text-charcoal mb-2">
                     Nama Lengkap
                   </label>
                   <input
@@ -65,13 +65,13 @@ export function ContactPage() {
                     value={formData.name}
                     onChange={handleChange}
                     required
-                    className="w-full bg-black border border-zinc-800 px-4 py-3 text-white placeholder-zinc-600 focus:border-gold focus:outline-none transition-colors"
+                    className="w-full bg-white border-2 border-gold/20 px-4 py-3 text-charcoal placeholder-warm-gray focus:border-gold focus:outline-none transition-colors"
                     placeholder="Masukkan nama Anda"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="phone" className="block text-sm text-zinc-400 mb-2">
+                  <label htmlFor="phone" className="block text-sm text-charcoal mb-2">
                     Nomor WhatsApp
                   </label>
                   <input
@@ -81,13 +81,13 @@ export function ContactPage() {
                     value={formData.phone}
                     onChange={handleChange}
                     required
-                    className="w-full bg-black border border-zinc-800 px-4 py-3 text-white placeholder-zinc-600 focus:border-gold focus:outline-none transition-colors"
+                    className="w-full bg-white border-2 border-gold/20 px-4 py-3 text-charcoal placeholder-warm-gray focus:border-gold focus:outline-none transition-colors"
                     placeholder="08xxxxxxxxxx"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-sm text-zinc-400 mb-2">
+                  <label htmlFor="subject" className="block text-sm text-charcoal mb-2">
                     Subjek
                   </label>
                   <select
@@ -96,7 +96,7 @@ export function ContactPage() {
                     value={formData.subject}
                     onChange={handleChange}
                     required
-                    className="w-full bg-black border border-zinc-800 px-4 py-3 text-white focus:border-gold focus:outline-none transition-colors"
+                    className="w-full bg-white border-2 border-gold/20 px-4 py-3 text-charcoal focus:border-gold focus:outline-none transition-colors"
                   >
                     <option value="">Pilih subjek</option>
                     <option value="Tanya Produk">Tanya Produk</option>
@@ -108,7 +108,7 @@ export function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-sm text-zinc-400 mb-2">
+                  <label htmlFor="message" className="block text-sm text-charcoal mb-2">
                     Pesan
                   </label>
                   <textarea
@@ -118,7 +118,7 @@ export function ContactPage() {
                     onChange={handleChange}
                     required
                     rows={5}
-                    className="w-full bg-black border border-zinc-800 px-4 py-3 text-white placeholder-zinc-600 focus:border-gold focus:outline-none transition-colors resize-none"
+                    className="w-full bg-white border-2 border-gold/20 px-4 py-3 text-charcoal placeholder-warm-gray focus:border-gold focus:outline-none transition-colors resize-none"
                     placeholder="Tulis pesan Anda..."
                   />
                 </div>
@@ -132,18 +132,18 @@ export function ContactPage() {
 
             {/* Contact Info */}
             <div>
-              <h2 className="font-display text-3xl text-white mb-8">
+              <h2 className="font-display text-3xl text-charcoal mb-8">
                 Informasi <span className="text-gold italic font-accent">Kontak</span>
               </h2>
 
               <div className="space-y-8">
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <MapPin className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-2">Alamat Toko</h4>
-                    <p className="text-sm text-zinc-500 leading-relaxed">
+                    <h4 className="text-charcoal font-medium mb-2">Alamat Toko</h4>
+                    <p className="text-sm text-warm-gray leading-relaxed">
                       Jl. Tuparev No. 123<br />
                       Karawang Barat, Kabupaten Karawang<br />
                       Jawa Barat 41311, Indonesia
@@ -152,12 +152,12 @@ export function ContactPage() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <Phone className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-2">Telepon</h4>
-                    <p className="text-sm text-zinc-500">
+                    <h4 className="text-charcoal font-medium mb-2">Telepon</h4>
+                    <p className="text-sm text-warm-gray">
                       <a href="tel:+622671234567" className="hover:text-gold transition-colors">
                         (0267) 123-4567
                       </a>
@@ -166,12 +166,12 @@ export function ContactPage() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <MessageCircle className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-2">WhatsApp</h4>
-                    <p className="text-sm text-zinc-500">
+                    <h4 className="text-charcoal font-medium mb-2">WhatsApp</h4>
+                    <p className="text-sm text-warm-gray">
                       <a
                         href="https://wa.me/6281234567890"
                         target="_blank"
@@ -185,12 +185,12 @@ export function ContactPage() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <Mail className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-2">Email</h4>
-                    <p className="text-sm text-zinc-500">
+                    <h4 className="text-charcoal font-medium mb-2">Email</h4>
+                    <p className="text-sm text-warm-gray">
                       <a href="mailto:info@tokomassugema.com" className="hover:text-gold transition-colors">
                         info@tokomassugema.com
                       </a>
@@ -199,23 +199,23 @@ export function ContactPage() {
                 </div>
 
                 <div className="flex gap-4">
-                  <div className="w-14 h-14 border border-zinc-800 flex items-center justify-center flex-shrink-0">
+                  <div className="w-14 h-14 border-2 border-gold/30 flex items-center justify-center flex-shrink-0">
                     <Clock className="w-5 h-5 text-gold" />
                   </div>
                   <div>
-                    <h4 className="text-white font-medium mb-2">Jam Operasional</h4>
-                    <div className="text-sm text-zinc-500 space-y-1">
+                    <h4 className="text-charcoal font-medium mb-2">Jam Operasional</h4>
+                    <div className="text-sm text-warm-gray space-y-1">
                       <p>Senin - Sabtu: 09:00 - 21:00</p>
                       <p>Minggu: 10:00 - 18:00</p>
-                      <p className="text-gold">Buka setiap hari!</p>
+                      <p className="text-gold font-medium">Buka setiap hari!</p>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Quick WhatsApp Button */}
-              <div className="mt-10 p-6 bg-black border border-zinc-800">
-                <p className="text-white mb-4">Butuh respon cepat?</p>
+              <div className="mt-10 p-6 bg-white border-2 border-gold/20 shadow-sm">
+                <p className="text-charcoal mb-4">Butuh respon cepat?</p>
                 <a
                   href="https://wa.me/6281234567890"
                   target="_blank"
@@ -233,8 +233,8 @@ export function ContactPage() {
       </section>
 
       {/* Map Section */}
-      <section className="bg-black">
-        <div className="h-[500px]">
+      <section className="bg-cream">
+        <div className="h-[500px] shadow-inner">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.2!2d107.3!3d-6.3!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMTgnMDAuMCJTIDEwN8KwMTgnMDAuMCJF!5e0!3m2!1sen!2sid!4v1234567890"
             width="100%"
@@ -251,10 +251,10 @@ export function ContactPage() {
       {/* CTA Section */}
       <section className="py-24 bg-gold">
         <div className="container text-center">
-          <h2 className="font-display text-4xl text-black mb-4">
+          <h2 className="font-display text-4xl text-white mb-4">
             Kunjungi Toko Kami
           </h2>
-          <p className="text-black/70 max-w-lg mx-auto mb-8">
+          <p className="text-white/80 max-w-lg mx-auto mb-8">
             Kami menantikan kedatangan Anda di Toko Mas Sugema.
             Tim kami siap membantu menemukan perhiasan sempurna untuk Anda.
           </p>
@@ -263,7 +263,7 @@ export function ContactPage() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Button variant="secondary" className="gap-2 bg-black text-white hover:bg-zinc-900">
+            <Button variant="secondary" className="gap-2 bg-white text-gold hover:bg-cream border-0">
               <MapPin className="w-4 h-4" />
               Petunjuk Arah
             </Button>
