@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap');
 
 @theme {
   /* Cream & Gold Classic Theme */
@@ -27,6 +27,7 @@
   --font-family-body: "Inter", system-ui, sans-serif;
   --font-family-accent: "Cormorant Garamond", Georgia, serif;
   --font-family-cursive: "Great Vibes", cursive;
+  --font-family-brand: "Cinzel", Georgia, serif;
 
   /* Theme colors for shadcn */
   --color-background: #FAF9F6;
@@ -153,6 +154,10 @@
 
   .font-cursive {
     font-family: var(--font-family-cursive);
+  }
+
+  .font-brand {
+    font-family: var(--font-family-brand);
   }
 
   /* Gold colors */

@@ -147,8 +147,8 @@ export function Footer() {
         </div>
       </div>
 
-      {/* Large Brand Typography - Bold visibility */}
-      <div className="relative h-32 md:h-44 lg:h-56 bg-cream-darker overflow-hidden">
+      {/* Large Brand Typography - 90% width */}
+      <div className="relative h-24 md:h-32 lg:h-44 bg-cream-darker overflow-hidden">
         {/* Decorative top line */}
         <div className="absolute top-0 inset-x-0">
           <div className="h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent" />
@@ -158,9 +158,9 @@ export function Footer() {
         <div className="absolute top-4 left-4 w-8 h-8 border-t border-l border-gold/30" />
         <div className="absolute top-4 right-4 w-8 h-8 border-t border-r border-gold/30" />
 
-        {/* Large brand name - Bold 35% opacity */}
-        <div className="absolute inset-x-0 bottom-0 translate-y-[45%]">
-          <p className="text-center font-cursive text-[7rem] md:text-[12rem] lg:text-[16rem] xl:text-[20rem] leading-none text-gold/35 whitespace-nowrap select-none pointer-events-none">
+        {/* Large brand name - fills 90% width */}
+        <div className="absolute inset-x-0 bottom-0 translate-y-[50%] flex justify-center">
+          <p className="font-brand font-semibold text-[18vw] md:text-[16vw] lg:text-[14vw] leading-none text-gold/30 uppercase tracking-[0.15em] select-none pointer-events-none">
             Sugema
           </p>
         </div>

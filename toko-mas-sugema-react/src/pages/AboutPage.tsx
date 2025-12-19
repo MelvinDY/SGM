@@ -30,24 +30,6 @@ const milestones = [
   { year: '2020', title: 'Digital', description: 'Meluncurkan layanan konsultasi online via WhatsApp.' },
 ]
 
-const team = [
-  {
-    name: 'Bapak Sugema',
-    role: 'Pendiri',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop',
-  },
-  {
-    name: 'Ibu Ratna',
-    role: 'Manajer',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&fit=crop',
-  },
-  {
-    name: 'Mas Andi',
-    role: 'Ahli Perhiasan',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop',
-  },
-]
-
 export function AboutPage() {
   return (
     <>
@@ -178,40 +160,6 @@ export function AboutPage() {
                     {milestone.description}
                   </p>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Section */}
-      <section className="py-24 bg-cream">
-        <div className="container">
-          <div className="text-center mb-16">
-            <p className="text-xs uppercase tracking-[0.3em] text-gold mb-4">
-              Tim Kami
-            </p>
-            <h2 className="font-display text-4xl md:text-5xl text-charcoal">
-              Orang-Orang di <span className="text-gold font-cursive text-[1.15em]">Balik Layar</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-            {team.map((member, index) => (
-              <div key={index} className="text-center group">
-                <div className="aspect-square overflow-hidden mb-6 border-2 border-gold/20 shadow-md">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500"
-                  />
-                </div>
-                <h3 className="font-display text-xl text-charcoal mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-sm text-gold">
-                  {member.role}
-                </p>
               </div>
             ))}
           </div>
