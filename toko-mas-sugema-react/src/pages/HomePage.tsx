@@ -4,35 +4,74 @@ import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import { HeroSection } from '@/components/HeroSection'
 import { MessageCircle, Shield, Award, Gem, Star, MapPin, Phone, Clock, Diamond } from 'lucide-react'
+import { useFeaturedProducts } from '@/hooks/useProducts'
+import type { Product } from '@/types/database'
 
-const featuredProducts = [
+// Fallback featured products when Supabase is not configured
+const fallbackFeaturedProducts: Product[] = [
   {
-    id: 1,
+    id: '1',
     name: 'Cincin Berlian Solitaire',
     category: 'Cincin',
     weight: '3.5 gram',
-    image: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop',
+    karat: '24K',
+    price: null,
+    description: null,
+    image_url: 'https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=400&h=400&fit=crop',
+    instagram_post_id: null,
+    instagram_permalink: null,
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
-    id: 2,
+    id: '2',
     name: 'Kalung Emas Italian',
     category: 'Kalung',
     weight: '8.2 gram',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop',
+    karat: '24K',
+    price: null,
+    description: null,
+    image_url: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&h=400&fit=crop',
+    instagram_post_id: null,
+    instagram_permalink: null,
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
-    id: 3,
+    id: '3',
     name: 'Gelang Emas Ukir',
     category: 'Gelang',
     weight: '12.0 gram',
-    image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop',
+    karat: '24K',
+    price: null,
+    description: null,
+    image_url: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?w=400&h=400&fit=crop',
+    instagram_post_id: null,
+    instagram_permalink: null,
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
   {
-    id: 4,
+    id: '4',
     name: 'Anting Mutiara Premium',
     category: 'Anting',
     weight: '2.8 gram',
-    image: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop',
+    karat: '22K',
+    price: null,
+    description: null,
+    image_url: 'https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=400&h=400&fit=crop',
+    instagram_post_id: null,
+    instagram_permalink: null,
+    is_featured: true,
+    is_active: true,
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   },
 ]
 
@@ -77,7 +116,7 @@ const fadeInUp = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as const },
   },
 }
 
@@ -93,6 +132,13 @@ const staggerContainer = {
 }
 
 export function HomePage() {
+  const { data: supabaseFeatured } = useFeaturedProducts()
+
+  // Use Supabase data if available, otherwise fallback to static data
+  const featuredProducts = supabaseFeatured && supabaseFeatured.length > 0
+    ? supabaseFeatured
+    : fallbackFeaturedProducts
+
   return (
     <>
       {/* Hero Section */}
@@ -217,7 +263,7 @@ export function HomePage() {
                     <motion.img
                       whileHover={{ scale: 1.1 }}
                       transition={{ duration: 0.5 }}
-                      src={product.image}
+                      src={product.image_url}
                       alt={product.name}
                       className="w-full h-full object-cover"
                     />
